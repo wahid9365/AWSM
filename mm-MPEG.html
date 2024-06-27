@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPEG- MPEG Audio Encoding</title>
+</head>
+<body>
+    <h3>MPEG</h3>
+    <p>MPEG is developed and defined by ISO/IEC JTC1/SC 29/WG 11 to cover motion video
+        as well as audio coding. In light of the state of the art in CD technology, the goal was a
+        compressed stream data rate of about 1.2Mbit/s. MPEG specifies a maximum data rate of
+        1,856,000 bit/s. The data rate for each audio channel can be chosen between 32 and 448 Kbit/s in
+        increments of 16Kbit/s. This data rate enables video and audio compression of acceptable
+        quality. Since 1993, MPEG has been an International Standard (IS).</p>
+        <p>MPEG is suitable for asymmetric compression as well as symmetric compression.
+            Asymmetric coding requires considerably more effort for encoding than for decoding.
+            Compression is carried out once, whereas decompression is performed many times. A typical
+            application area is retrieval systems. Symmetric compression is characterized by a comparable
+            effort for the compression and decompression processing. This is a requirement for interactive
+            dialogue applications, as is a bounded processing delay for the processing.</p>
+            <h3>MPEG Audio Encoding</h3>
+    <p>Audio Coding MPEG audio coding is compatible with the coding of audio data used for
+        Compact Disc Digital Audio (CD-DA) and Digital Audio Tape (DAT). The most important
+        criterion is the choice of sample rate of 44.1kHz or 48kHz (additionally 32kHz) at 16bits per
+        sample value. Each audio signal is compressed to either 64, 96, 128, or 192Kbit/s.</p>
+        <p>Three quality layers, as shown in below figure, are defined with different encoding and
+            decoding complexity. An implementation of a higher layer must be able to decode the MPEG
+            audio signals of lower layers. A transformation into the frequency domain is applied for audio.
+            The Fast Fourier Transform (FFT) is a suitable technique.The relevant portion of the spectrum is
+            divided into 32 non-overlapping subbands. The audio signal is thus split into 32 subbands.
+            Different components of the spectrum can then be quantized differently. In parallel with the
+            actual FFT, the noise level in each subband is determined using a psychoacoustic model. At a
+            higher noise level, a coarser quantization is performed. A lower noise level results in finer
+            quantization.</p>
+            <p>In the first and second layers, the appropriately quantized spectral components are simply
+                PCM-encoded. The third layer additionally performs Huffman coding.</p>
+                <p>Audio coding can be performed on stereo sound, a single channel, or two independent
+                    channels. MPEG provides for two types of stereo sound. In the first case, two channels are
+                    processed completely independently. In the joint stereo mode, MPEG achieves a higher
+                    compression ratio by exploiting redundancies between the two channels.</p>
+                    <img src="MPEG Audio Encoding.png" alt="MPEG Audio Encoding" width="400" height="500">
+
+</body>
+</html>

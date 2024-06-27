@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCEL FUNCTIONS</title>
+</head>
+<body>
+    <h3>EXCEL FUNCTIONS</h3>
+    <article>
+        <h4>AVERAGEA Function</h4>
+        The AVERAGEA Function in Excel is a statistical function. The function calculates the
+average of a group of supplied values. It differs from the AVERAGE function, as it evaluates the
+logical values TRUE and FALSE, and numbers represented as text, whereas AVERAGE just
+skips these values during calculation.
+<pre>Syntax
+    =AVERAGEA(value1, [value2], …)
+</pre>
+where value1 is a required argument. However, subsequent values are optional.
+    </article>
+<article>
+    <h4>AVERAGEIF Function</h4>
+    The Excel AVERAGEIF function computes the average of the numbers in a range that meet the
+supplied criteria. The criteria for AVERAGEIF supports logical operators (>,<,<>,=) and
+wildcards (*,?) for partial matching.
+<pre>Syntax
+    =AVERAGEIF (range, criteria, [average_range])
+</pre>
+<h6>Arguments:</h6>
+<ul>
+    <li>range - One or more cells, including numbers or names, arrays, or references.</li>
+    <li>criteria - A number, expression, cell reference, or text.</li>
+    <li>average_range - [optional] The cells to average. When omitted, range is used.</li>
+</ul>
+The AVERAGEIF function below (three arguments, last argument is the range to average)
+calculates the average of all values in the range B1:B7 if the corresponding cells in the range
+A1:A7 contain exactly Apple.
+<pre>=AVERAGE (A1:A7, “Apple”, B1:B7)</pre>
+
+</article>
+<article>
+    <h4>The AVERAGEIFS function</h4>
+    The AVERAGEIFS function (with the letter S at the end) in Excel calculates the average
+of cells that meet multiple criteria.The criteria in AVERAGEIFS supports logical operators
+(>,<,<>,=) and wildcards (*,?) for partial matching.
+<pre>Syntax
+    =AVERAGEIFS (avg_rng, range1, criteria1, [range2], [criteria2], ...)
+</pre>
+<h6>Arguments:</h6>
+<ul>
+    <li>avg_rng - The range to average.</li>
+    <li>range1 - The first range to evaluate.</li>
+    <li>criteria1 - The criteria to use on range1</li>
+    <li>range2 - [optional] The second range to evaluate.</li>
+    <li>criteria2 - [optional] The criteria to use on range2.</li>
+</ul>
+</article>
+<article>
+    <h4>SUMIF function</h4>
+    The Excel SUMIF function computes the sum of the numbers in a range that meet the supplied
+    criteria.
+    <pre>Syntax
+        SUMIF (range, criteria, [sum_range])</pre> 
+        <h6>Arguments:</h6>
+        <ul>
+            <li>range- the range of cells that you want to apply the criteria against.</li>
+            <li>Criteria- the criteria used to determine which cells to add.</li>
+            <li>sum_range- optional. It is the range of cells to sum together. If this parameter is omitted,
+                it uses range as the sum_range.</li>
+        </ul>
+</article>
+<article>
+    <h4>Excel DAY, DAYS and DAY360 function</h4>
+    <ul>
+        <li>
+            <h4>DAY function</h4>
+            The Excel DAY function returns the day of the month as a number between 1 to 31 from
+a given date. We can use the DAY function to extract a day number from a date into a
+cell.
+<pre>Syntax
+    =DAY (date)</pre>
+    Arguments: date - A valid Excel date.
+        </li>
+        <li>
+            <h4>DAYS function</h4>
+            The Excel DAYS function returns the number of days between two dates. With a start
+date in A1 and end date in B1, =DAYS(B1,A1) will return the days between the two
+dates.
+<pre>Syntax:
+    =DAYS (end_date, start_date)</pre>
+    Arguments:
+end_date - The end date.
+start_date - The start date.
+        </li>
+        <li>
+            <h4>DAY360 function</h4>
+            The Excel DAYS360 function returns the number of days between two dates based on a
+360-day year. Calculations based on a 360-day year come from certain accounting
+calculations where all 12 months are considered to have 30 days.
+     <pre>Syntax
+        =DAYS360 (start_date, end_date, [method])</pre>   
+<h6>Arguments:</h6>
+<ul>
+    <Li>start_date - The start date</Li>
+    <Li>end_date - The end date.</Li>
+    <Li>method - [optional] The type of day count basis to use. FALSE (default) is US method,
+        TRUE is European method.</Li>
+        <p>FALSE - (default) - US method. When the start date is the last day of the month, it is set to the
+            30th day of the same month. When the end date is the last day of the month, and the start date <
+            30, the end date is set to the 1st of the next month, otherwise the end date is set to the 30th of the
+            same month.</p>
+            <p>TRUE - European method. Starting dates and ending dates equal to the 31st of a month are set to
+                the 30th of the same month.</p>
+</ul>
+    </li>
+    </ul>
+</article>
+<article>
+    <h4>EXP Function</h4>
+    The Excel EXP function returns the result of the constant e raised to the power of a
+number. The constant e is approximately 2.71828, and is the base of the natural logarithm.
+<pre>Syntax
+    =EXP (number)
+    Arguments :
+    o number - The power that e is raised to.</pre>
+</article>
+<article>
+    <h4>FACT Function</h4>
+    The Microsoft Excel FACT function returns the factorial of a number.
+<pre>Syntax
+    The syntax for the FACT function in Microsoft Excel is:
+    =FACT (number)</pre>
+    Argument number is a numeric value used to calculate the factorial.
+</article>
+<article>
+    <h4>FLOOR function</h4>
+    The Excel FLOOR function rounds a given number down to the nearest specified multiple.
+FLOOR function always rounds down.
+<pre>Syntax
+    =FLOOR (number, multiple)</pre>
+    <ul>
+        Arguments:
+        <li>
+            o number - The number that should be rounded.
+           </li>
+        <li> o multiple - The multiple to use when rounding.</li>
+    </ul>
+</article>
+<article>
+    <h4>FERROR function</h4>
+    The Excel IFERROR function returns a custom result when a formula generates an error, and a
+standard result when no error is detected.
+<pre>Syntax
+    =IFERROR (value, value_if_error)</pre>
+    Arguments:
+<p>o value - The value, reference, or formula to check for an error.</p>
+o value_if_error - The value to return if an error is found.
+
+</article>
+
+    
+</body>
+</html>

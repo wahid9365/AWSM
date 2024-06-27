@@ -1,0 +1,229 @@
+<html>
+<head>
+    <title>Multimedia</title>
+    <style>
+        /* Internal CSS */
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .topic-link {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <!-- Topic links will be added dynamically -->
+    </div>
+    <div class="content" id="content">
+        <h2>Introduction</h2>
+    <p>Multimedia has become an inevitable part of any presentation. It has found a
+        variety of applications right from entertainment to education. The evolution of internet
+        has also increased the demand for multimedia content.</p><br>
+       <p> <b>Multimedia : </b> Multimedia is the field concerned with the computer-controlled integration of text,
+        graphics, drawings, still and moving images (Video), animation, audio, and any other
+        media where every type of information can be represented, stored, transmitted and
+        processed digitally.</p>
+        <h5>Multimedia composed of two word:</h5>
+        <p><b>Multi-</b> means many; multiple</p>
+        <p><b>Medium:</b> an intervening substances through which something is
+            transmitted or carried on; A means of mass communication such as newspaper, magazine
+            or television.</p>
+            <p>From the user’s perspective, multimedia means that representation of computer
+                information through audio and/or video, in addition to text, image, graphics and
+                animation.</p>
+                <p>A multimedia system is characterized by computer controlled, integrated
+                    production, manipulation, presentation, storage and communication of independent
+                    information which is encoded at least through a continuous ( time-dependent) and
+                    discrete ( time-independent) medium.</p>
+                    <ul>
+                        <li>The integration of the different media into the computer provides additional
+                            possibilities for the use of computational power currently available. For example,
+                            interactive presentation of huge amount of information.</li>
+                        <li>In multimedia system, data can be transmitted through computer and
+                            telecommunication networks, which implies in application in the areas of information
+                            distribution and cooperative work.</li>
+                        <li>One of the first and best known institutes working on different aspects of multimedia
+                            is the MIT Media Lab in Boston. Research in going on there on a variety of future
+                            applications such as personal newspaper and holography.</li>
+                        
+                    </ul>
+                    <h2>Medium</h2>
+                    <p>Medium can be describes as a means for distribution and presentation of
+                        information. Examples of a medium are text, graphics, speech and music.</p>
+    </div>
+    
+    <script>
+        // Define your topics and content
+        var topics = [
+            {
+                title: '~Introduction',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-introduction.html"></iframe></html>'
+            },
+            {
+                title: '~Classification of Media',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-classification of media.html"></iframe></html>'
+            },
+            {
+                title: '~Properties of Multimedia',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-properties.html"></iframe></html>'
+            },
+            {
+                title: '~Traditional Data Stream Characteristics',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-Traditional-data-stream-characteristics.html"></iframe></html>'
+            },
+            {
+                title: '~Transmission Mode',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-Transmission-mode.html"></iframe></html>'
+            },
+            {
+                title: '~Speech in Multimedia',
+                content: '<html><iframe style="height:125%; width:100%; border:none;" src="mm-Speech-in-Multimedia.html"></iframe></html>'
+            },
+            {
+                title: '~Images and Graphics',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-image and graphics in Multimedia.html"></iframe></html>'
+            },
+            {
+                title: '~Image Format',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-image-format-in-multimedia.html"></iframe></html>'
+            },
+            {
+                title: '~Graphics Format',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-Graphics Format.html"></iframe></html>'
+            },
+            {
+                title: '~Image Synthesis',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-Image Synthesis.html"></iframe></html>'
+            },
+            {
+                title: '~Graphics Hardware',
+                content: '<html><iframe style="height:110%; width:100%; border:none;" src="mm-Graphics Hardware- Input-and-output.html"></iframe></html>'
+            },
+            {
+                title: '~Image Analysis and Recognition',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-IMAGE ANALYSIS and IMAGE RECOGNITION.html"></iframe></html>'
+            },
+            {
+                title: '~Image Transmission',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-IMAGE TRANSMISSION.html"></iframe></html>'
+            },
+            {
+                title: '~Video Signal Representation',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-Video Signal Representation.html"></iframe></html>'
+            },
+            {
+                title: '~Television',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-TV Conventional Systems.html"></iframe></html>'
+            },
+            {
+                title: '~Conditioning, Labeling, Grouping, Extracting, Matching',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-conditioning-labeling-grouping-extracting-matching.html"></iframe></html>'
+            },
+            {
+                title: '~Computer-Based Animation',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-COMPUTER-BASED ANIMATION.html"></iframe></html>'
+            },
+            {
+                title: '~Animation Language',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-animation language.html"></iframe></html>'
+            },
+            {
+                title: '~Methods of Controlling Animation',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-methods of controlling animation.html"></iframe></html>'
+            },
+            {
+                title: '~Display and Transmission of Animation',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-display and transmission of animation.html"></iframe></html>'
+            },
+            {
+                title: '~Synchronization',
+                content: '<html><iframe style="height:330%; width:100%; border:none;" src="mm-synchronization.html"></iframe></html>'
+            },
+            {
+                title: '~Data Compression',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-Data Compression.html"></iframe></html>'
+            },
+            {
+                title: '~Steps for Data Compression',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-Steps for data compression.html"></iframe></html>'
+            },
+            {
+                title: '~Coding Requirements',
+                content: '<html><iframe style="height:120%; width:100%; border:none;" src="mm-Coding Requirements.html"></iframe></html>'
+            },
+            {
+                title: '~Source, Entropy and Hybrid Coding',
+                content: '<html><iframe style="height:120%; width:100%; border:none;" src="mm-Source, Entropy and Hybrid Coding.html"></iframe></html>'
+            },
+            {
+                title: '~Basic Compression Techniques',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-Basic Compression Techniques.html"></iframe></html>'
+            },
+            {
+                title: '~JPEG (Joint Photographic Expert Group)',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-JPEG (Joint Photographic Expert Group).html"></iframe></html>'
+            },
+            {
+                title: '~MPEG',
+                content: '<html><iframe style="height:120%; width:100%; border:none;" src="mm-MPEG.html"></iframe></html>'
+            },
+            {
+                title: '~Computer Technology',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="mm-Computer Technology.html"></iframe></html>'
+            },
+            {
+                title: '~Hybrid Systems and Digital Systems',
+                content: '<html><iframe style="height:180%; width:100%; border:none;" src="mm-Hybrid Systems and Digital Systems.html"></iframe></html>'
+            },
+        ];
+        
+        // Function to create topic links
+        function createTopicLinks() {
+            var sidebarDiv = document.getElementById("sidebar");
+            
+            topics.forEach(function(topic) {
+                var topicLink = document.createElement("a");
+                topicLink.classList.add("topic-link");
+                topicLink.textContent = topic.title;
+                topicLink.onclick = function() {
+                    showContent(topic.content);
+                };
+                sidebarDiv.appendChild(topicLink);
+            });
+        }
+        
+        // Function to show content
+        function showContent(content) {
+            var contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = content;
+        }
+        
+        // Call the createTopicLinks function to generate the links
+        createTopicLinks();
+    </script>
+</body>
+</html>

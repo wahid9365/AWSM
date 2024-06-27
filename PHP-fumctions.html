@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>PHP Unit 2</title>
+<style>
+body 
+{
+font-family: Times New Roman;
+}
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+div
+{
+background-color:black;
+color:white;
+width:50%;
+}
+</style>
+</head>
+<body>
+<h2>Function</h2>
+A function is a block of code written in a program to perform some specific task. PHP provides us with two major types of functions:
+<ul>
+<li>Built-in functions : PHP provides us with huge collection of built-in library functions. These functions are already coded and stored in form of functions. To use those we just need to call them as per our requirement like, var_dump, fopen(), print_r(), gettype() and so on.</li>
+<li>User Defined Functions : Apart from the built-in functions, PHP allows us to create our own customised functions called the user-defined functions. Using this we can create our own packages of code and use it wherever necessary by simply calling it.</li>
+</ul>
+<h2>Invoking / Calling a Function</h2>
+More than 1,000 functions are built into the standard PHP distribution. We can invoke the unction we want simply by specifying the function name, assuming that the function has been made available either through the library’s compilation into the installed distribution or via the include() or require() statement.
+<p>For example, suppose we want to raise the number five to the third power. We can invoke PHP’s pow() function like this:</p>
+<pre>
+< ?php
+	echo pow(5,3);
+? >
+</pre>
+If we want to store the function output in a variable, we can assign it like this:
+<pre>
+< ?php
+	$value = pow(5,3); // returns 125
+	echo $value;
+? >
+</pre>
+<h2>Creating a Function</h2>
+Syntax for creating function in PHP as:
+<pre>
+function functionName(parameters)
+{
+	function body
+}
+</pre>
+<ul>
+<li>PHP does not impose many restrictions on the function name (provided it does not clash with an existing PHP function).</li>
+<li>A commonly used formatting standard is the camel case format where first letter of the function name is lowercase and the first letter of any subsequent compound words are capitalized.</li>
+</ul>
+Example:
+<pre>
+< ?php
+function dispText()
+{
+	echo "This is PHP function ‘Display Text’";
+}
+// Calling the function
+dispText();
+? >
+</pre>
+Output:
+<pre>
+This is PHP function ‘Display Text’
+</pre>
+<h2>Function Parameters or Arguments</h2>
+The information or variable, within the function’s parenthesis, are called parameters. These are used to hold the values executable during runtime. A user is free to take in as many parameters as he wants, separated with a comma(,) operator. These parameters are used to accept inputs during runtime. While passing the values like during a function call, they are called arguments. An argument is a value passed to a function and a parameter is used to hold those arguments. In common term, both parameter and argument mean the same. We need to keep in mind that for every parameter, we need to pass its corresponding argument.
+<pre>
+Syntax:
+function function_name($first_parameter, $second_parameter)
+{
+	executable code;
+}
+</pre>
+Example:
+<pre>
+< ?php
+// function along with three parameters
+function proNum($num1, $num2, $num3)
+{
+	$product = $num1 * $num2 * $num3;
+	echo "The product is $product";
+}
+// Calling the function
+// Passing three arguments
+proNum(2, 3, 5);
+? >
+</pre>
+Output:
+<pre>The product is 30</pre>
+<h2>Returning Multiple Values</h2>
+It’s often convenient to return multiple values from a function. For example, suppose that we like to create a function that retrieves user data from a database (say the user’s name, e-mail address, and phone number) and returns it to the caller. The list() construct offers a convenient means for retrieving values from an array as shown below:
+<pre>
+< ?php
+function retrieveUserProfile()
+{
+	$user[] = "Jason Gilmore";
+	$user[] = "jason@example.com";
+	$user[] = "English";
+	return $user;
+}
+list($name, $email, $language) = retrieveUserProfile();
+echo "Name: {$name}, email: {$email}, language: {$language}";
+? >
+</pre>
+Executing this script returns the following:
+<pre>Name: Jason Gilmore, email: jason@example.com, language: English</pre>
+<h2>Call by Value</h2>
+When we call function by passing an argument by any value or variables, it’s called call by value. The called function uses the value in a local variable; any changes to it do not affect the source variable. For example, consider a function calculateSalesTax():
+<pre>
+function calculateSalesTax($price, $tax)
+{
+	return $price + ($price * $tax);
+}
+calculateSalesTax(15.00, .0675);
+</pre>
+We can also pass variables like this:
+<pre>
+< ?php
+	$pricetag = 15.00;
+	$salestax = .0675;
+	$total = calculateSalesTax($pricetag, $salestax);
+? >
+</pre>
+<h2>Call by Reference</h2>
+Call by reference means passing the address of a variable where the actual value is stored. The called function uses the value stored in the passed address; any changes to it do affect the source variable.
+<p>During call by reference, when defining the function, we prefix the parameter we want to change with an ampersand, like this:</p>
+<pre>
+function doubleIt(&$number) {
+	$number *= 2;
+}
+</pre>
+The parameter between the parentheses is prefixed by an ampersand, the original value of a variable passed as an argument to the function doubleIt will be changed. This is known as passing by reference.
+<p>For example:
+<pre>
+$num = 4;
+echo '$num is: ' . $num . '<br>';
+doubleIt($num);
+echo '$num is now: ' . $num;
+</pre>
+</p>
+Output
+<pre>
+$num is: 4
+$num is now: 8
+</pre>
+<h2>Recursive Function</h2>
+Recursive function is a function which calls itself again and again until the termination condition arrive. For example, calculating the factorial of number using recursive function in php as:
+<pre>
+< ?php
+	function fact($n)
+	{
+	if ($n === 0)
+	{
+		// our base case
+		return 1;
+	}
+	else
+	{
+		return $n * fact($n-1); // <--calling itself.
+	}
+}
+echo fact(5);
+? >
+</pre>
+</body>
+</html>

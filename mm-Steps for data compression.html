@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps for data compression</title>
+</head>
+<body>
+    <h3>Steps for data compression</h3>
+    <p>Figure below shows the typical sequence of operations performed in the compression of
+        still images and video and audio data streams.</p>
+        <img src="uncompressed to compressed picture.png" alt="uncompressed to compressed picture" width="800" height="150">
+        <ol>
+            <li><b>Preparation step:</b>Preparation includes analog-to-digital conversion and generating an
+                appropriate digital representation of the information. An image is divided into blocks of
+                8X8 pixels, and represented by a fixed number of bits per pixel.</li>
+            <li><b>Processing step:</b>Processing is actually the first step of the compression process which
+                makes use of sophisticated algorithms. A transformation from the time to the frequency
+                domain can be performed using DCT. In the case of motion video compression,
+                interframe coding uses a motion vector for each 8x8 block.</li>
+            <li><b>Quantization step:</b>Quantization processes the results of the previous step. It specifies
+                the granularity of the mapping of real numbers into integers. This process results in a reduction of precision. In the transformed domain, the coefficients are distinguished
+                according to their significance. For example, they could be quantized using a different
+                number of bits per coefficient.</li>
+            <li><b>Entropy Encoding:</b>Entropy encoding is usually the last step. It compresses a sequential
+                digital data stream without loss. For example, a sequence of zeroes in a data stream can
+                be compressed by specifying the number of occurrences followed by the zero itself.</li>
+        </ol>
+     
+    
+</body>
+</html>

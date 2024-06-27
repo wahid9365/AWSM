@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Compression Techniques</title>
+</head>
+<body>
+    <h3>Basic Compression Techniques</h3>
+    <ul>
+        <li><b>Run-Length Coding</b>
+            Data often contains sequences of identical bytes. By replacing these repeated byte sequences
+            with the number of occurrences, a substantial reduction of data can be achieved. This is known
+            as run-length coding. A special marker M is needed in the data that does not occur as part of the
+            data stream itself.</li>
+            <p>To illustrate this, we define the exclamation mark to be the M-byte. A single occurrence of
+                an exclamation mark is interpreted as the M-byte during decompression. Two consecutive
+                exclamation marks are interpreted as an exclamation mark occurring within the data. The M-byte
+                can thus be used to mark the beginning of a run-length coding.</p>
+        <li><b>Zero Suppression</b>Run-length coding is a generalization of zero suppression, which assumes that just one
+            symbol appears particularly often in sequences. The blank (space) character in text is such a
+            symbol; single blanks or pairs of blanks are ignored. Starting with sequences of three bytes, they
+            are replaced by an M-byte and a byte specifying the number of blanks in the sequence. The
+            number of occurrences can again be offset (by –3). Sequences of between three and 257 bytes
+            can thus be reduced to two bytes. Further variations are tabulators used to replace a specific
+            number of null bytes and the definition of different M-bytes to specify different numbers of null bytes. For example, an M5-byte could replace 16 null bytes, while an M4-byte could replace 8
+            null bytes. An M5-byte followed by an M4-byte would then represent 24 null bytes.</li>
+        <li><b>Vector Quantization</b>
+            In the case of vector quantization, a data stream is divided into blocks of n bytes each
+            (n>1). A predefined table contains a set of patterns. For each block, the table is consulted to find
+            the most similar pattern (according to a fixed criterion). Each pattern in the table is associated
+            with an index. Thus, each block can be assigned an index. Such a table can also be
+            multidimensional, in which case the index will be a vector. The corresponding decoder has the
+            same table and uses the vector to generate an approximation of the original data stream.</li>
+        <li><b>Diatomic Encoding</b>
+            Diatomic encoding is a variation based on combinations of two data bytes. This technique
+            determines the most frequently occurring pairs of bytes. Studies have shown that the eight most
+            frequently occurring pairs in the English language are ―E,‖ ―T,‖ ―TH,‖ ―A,‖ ―S,‖ ―RE,‖ ―IN,‖
+            and ―HE.‖ Replacing these pairs by special single bytes that otherwise do not occur in the text
+            leads to a data reduction of more than ten percent</li>
+        <li><b>Statistical Coding</b>
+            There is no fundamental reason that different characters need to be coded with a fixed
+            number of bits. Morse code is based on this: frequently occurring characters are coded with short
+            strings, while seldom-occurring characters are coded with longer strings. Such statistical coding
+            depends how frequently individual characters or sequences of data bytes occur. There are
+            different techniques based on such statistical criteria, the most prominent of which are Huffman
+            coding and arithmetic coding.</li>
+            <li><b>Huffman Coding</b>
+                Given the characters that must be encoded, together with their probabilities of occurrence,
+                the Huffman coding algorithm determines the optimal coding using the minimum number of bits.
+                Hence, the length (number of bits) of the coded characters will differ. The most frequently
+                occurring characters are assigned to the shortest code words. A Huffman code can be determined
+                by successively constructing a binary tree, whereby the leaves represent the characters that are to
+                be encoded. Every node contains the relative probability of occurrence of the characters
+                belonging to the subtree beneath the node. The edges are labeled with the bits 0 and 1.</li>
+            <li><b>Arithmetic Coding</b>Like Huffman coding, arithmetic coding is optimal from an information theoretical point of
+                view. Therefore, the length of the encoded data is also minimal. Unlike Huffman coding,
+                arithmetic coding does not code each symbol separately. Each symbol is instead coded by
+                considering all prior data. Thus a data stream encoded in this fashion must always be read from
+                the beginning. Consequently, random access is not possible. In practice, the average compression
+                rates achieved by arithmetic and Huffman coding are similar.
+            <p>Differences in compression efficiency arise in special cases, for example in digitized
+                graphics consisting primarily of a single (background) color. Arithmetic coding is better suited
+                than Huffman coding in this case. This is always the case if symbols occur in the input data
+                stream with such a frequency that they have very small information content. These can be
+                encoded using less than one bit, whereas in Huffman coding each symbol requires at least one
+                bit.</p></li>
+                
+
+    </ul>
+    
+</body>
+</html>

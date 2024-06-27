@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>synchronization in Multimedia</title>
+</head>
+<body>
+    <h3>synchronization</h3>
+    
+    <p>The word synchronization refers to time. Synchronization in multimedia systems refers to
+        the temporal relations between media objects in the multimedia system.</p>
+        <p>Synchronization between media objects comprises relations between time-dependent media
+            objects and time-independent media objects. An example of synchronization between continuous
+            media is the synchronization between the visual and acoustical information in television.
+            Synchronization is addressed and supported by many system components including the operating
+            system, communication system, databases and documents.</p>
+            <h3>Basic Synchronization Issues</h3>
+            <p>Integrated media processing is an important characteristics of a multimedia system. The main
+                reasons for these integration demands are the inherent dependencies between the information
+                coded in the media objects. These dependencies must be reflected in the integrated processing
+                including storage, manipulation, capturing and the presentation of the media objects.</p>
+                <p>Synchronization in multimedia systems is comprising of content, spatial and temporal
+                    relations between media objects.</p>
+                    <p>Content relations define a dependency of media objects from some data. An example of a
+                        content relation is the dependency between a filled spreadsheet and a graphic that represents the
+                        data listed in the spreadsheet.</p>
+                        <p>The spatial relations that are usually known as layout relationships define the space used
+                            for the presentation of a media object on an output device at a certain point of time in a
+                            multimedia presentation.</p>
+                            <p>The temporal relations define the temporal dependencies between media objects. They
+                                are of interest whenever time-dependent media objects exist</p>
+<h3>Intra-object and Inter-object Synchronization</h3>   
+<ul>
+    <Li><b>Intra-object synchronization:</b> Intra-object synchronization refers to the time relation
+        between various presentation units of one time-dependent media objects. An example is the time
+        relation between the single frames of a video sequence. For a video with a rate of 25 frames per
+        second, each of the frames must be displayed for 40 ms.</Li>
+    <Li><b>Inter-Object Synchronization:</b> Inter-object synchronization refers to the
+        synchronization between media objects. Figure below shows an example of the time relations of
+        a multimedia synchronization that starts with an audio/ video sequence, followed by several
+        pictures and an animation that is commented by an audio sequence.</Li>
+        <img src="Inter-object synchronization example.png" alt="Inter-object synchronization example that shows temporal relations in a multimedia
+        presentation including audio, video, animation and picture objects" width="400" height="200">
+    
+</ul> 
+<h3>Live Synchronization</h3>
+    <p>A typical application of live synchronization is conversational services. In the scope of a
+        source/ sink scenario, at the source, volatile data streams (i.e. data being captured from the
+        environment) are created which are presented at the sink (as shown in below fig.). The common
+        context of several streams on the source site must be preserved at the sink. The source may be
+        comprised of acoustic and optical sensors as well as media conversion units. The connection
+        offers a data path between source and sink. The sink presents the units to the user. A source and
+        sink may be located at different sites.</p>
+        <img src="Live Synchronization without intermediate long-term storage.png" alt="Live Synchronization without intermediate long-term storage" width="400" height="200">
+        <p>The goal of synchronization in such a scenario is to reproduce at the sink the signals in the same
+            way as they appeared at the source. A possible manipulation by the sink is to adapt the
+            presentation to the available resources.</p>
+            <h3>Synthetic Synchronization</h3>
+            <p>The emphasis of synthetic synchronization is to support flexible synchronization relations
+                between media. In synthetic synchronization, two phases can be distinguished:</p>
+                <ul>
+                    <li>In the specification phase, temporal relations between the media objects are defined.</li>
+                    <li>In the presentation phase, a run-time system presents data in a synchronized mode</li>
+                </ul>
+                <p>In the specification phase of synthetic synchronization, the captured or created media objects are
+                    explicitly synchronized. Media objects that are stored in a live synchronization scenario ca also
+                    be included in a synthetic synchronization play-back.</p>
+                    <h3>Lip Synchronization Requirements</h3>
+                    <p>Lip synchronization refers to the temporal relationship between an audio and video
+                        stream for the particular case of humans speaking. The time difference between related audio and
+                        video LDUs is known as the skew. Streams which are perfectly "in sync" have no skew, i.e., 0
+                        ms. Experiments at the IBM European Networking Center measured skews that were perceived
+                        as "out of sync." In their experiments, users often mentioned that something was wrong with the
+                        synchronization, but this did not disturb their feeling for the quality of the presentation.
+                        Therefore, the experimenters additionally evaluated the tolerance of the users by asking if the
+                        data out of sink affected the quality of the presentation.</p>
+                        <h3>Interval-based synchronization specification</h3>
+                        <p>In the interval-based synchronization specification, the presentation duration of an object
+                            is regarded as interval. Two time intervals may be synchronized in 13 different modes. Some of
+                            these types are invertible like before and after. Below figure shows a reduced set of seven non-
+                            invertible types:</p>
+                            <img src="Types of temporal relations between two objects.png" alt="Types of temporal relations between two objects" width="400" height="200">
+<p>A simple synchronization specification method for two media objects is to use these
+    seven types.</p>
+    <p>The enhanced interval-based model is based on interval relations. The basic
+        interval relations have already been shown in above Figure. In the enhanced approach, 29
+        interval relations that are defined as disjunctions of the basic interval relations have been
+        identified as relevant for multimedia presentations. To simplify the synchronization
+        specification, ten operators have been defined that can handle these interval relations. These
+        operations are shown in Figure below.</p>
+        <img src="Operations in the enhanced interval-based method.png" alt="Operations in the enhanced interval-based method" width="600" height="350">
+<p>The duration of a presentation like A or B, as well as the delay di, are subsets of +0
+    becausethe duration of a presentation, as well as of a delay, may not be known in advance. In
+    addition, the operations beforeendof, delayed,, startin, endin, cross and ouerlaps di must not be 0</p>
+    <h3>The Synchronization Reference Model</h3>
+    <p>A four-layer synchronization reference model is shown in below Figure . Each layer
+        implements synchronization mechanisms which are provided by an appropriate interface. These
+        interfaces can be used to specify and/or enforce the temporal relationships. Each interface
+        defines services, i.e., offering the user a means to define his/her requirements. Each interface can
+        be used by an application directly, or by the next higher layer to implement an interface. Higher
+        layers offer higher programming and Quality of Service (QoS) abstractions</p>
+        <img src="Four-layer reference model.png" alt="Four-layer reference model" width="400" height="200">
+<p>At the media layer, an application operates on a single continuous media stream, which is
+    treated as a sequence of LDUs. The abstraction offered at this layer is a device-independent
+    interface with operations like read, (device-handle, LDU)and write(device-handle, LDU).
+    Systems such as ActionMedia/IlTM's audio-video kernel or SunSPARCTM's audio device
+    provide the corresponding interfaces.</p>
+    <p>The stream layer operates on continuous media streams, as well as on groups of media
+        streams. In a group, all streams are presented in parallel by using mechanisms for inter-stream
+        synchronization.</p>
+        <p>The object layer operates on all types of media and hides the differences between discrete
+            and continuous media. The abstraction offered to the application is that of a complete,
+            synchronized presentation. This layer takes a synchronization specification as input and is
+            responsible for the correct schedule of the overall presentation.</p>
+            <p>The specification layer is an open layer. It does not offer an explicit interface. This layer
+                contains applications and tools are located that allow to create synchronization specifications.
+                Such tools are synchronization editors, multimedia document editors and authoring systems.</p>
+</body>
+
+</html>

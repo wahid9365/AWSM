@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>JS Unit 1</title>
+<style>
+body {
+font-family: Times New Roman;
+}
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<h1>Optional Semicolon</h1>
+Semicolons are used in JavaScript to separate statements from each other. But you can also omit the semicolon between two statements if those statements are written on separate lines.
+<br>
+<pre>
+Right:	x = 7 	  AND 	x = 7;	 AND x = 3; z = 7;
+	z = 3; 	      	z = 3;
+</pre>
+Since the two statements appear on separate line, line break is sufficient to tell these are two different statements. Semicolon before the line break is optional.
+<pre>
+Wrong:	x = 7   z = 3;
+</pre>
+Here, both statements are on same line but there is no way to differentiate between them. Therefore, a semicolon after first statement is required here.
+</body>
+</html>

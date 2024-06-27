@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conditioning-labeling-grouping-extracting-matching in multimedia</title>
+</head>
+<body>
+    <h3>Conditioning</h3>
+    <p>Conditioning is based on a model that suggests the observed image is composed of an
+        informative pattern modified by uninteresting variations that typically add to or multiply the
+        informative pattern. Conditioning estimates the informative pattern on the basis of the observed
+        image. Thus conditioning suppresses noise, which can be thought of as random unpatterned
+        variations affecting all measurements.</p>
+        <h3>Labeling</h3>
+        <p>Labeling is based on a model that suggests the informative pattern has structure as a
+            spatial arrangement of events, each spatial event being a set of connected pixels. Labeling
+            determines in what kinds of spatial events each pixel participates. An example of a labeling
+            operation is edge detection. Edge detection is an important part of the recognition process.</p>
+            <p>Edge detection recognizes many edges, but not all of them are significant. Therefore,
+                another labeling operation must occur after edge detection, namely thresholding. Thresholding
+                specifies which edges should be accepted and which should not; the thresholding operation
+                filters only the significant edges from the image and labels them. Other edges are removed.</p>
+        <h3>Grouping</h3>
+        <p>The labeling operation labels the kinds of primitive spatial events in which the pixel
+            participates. The grouping operation identifies the events by collecting together or identifying
+            maximal connected sets of pixels participating in the same kind of event. A grouping operation,
+            where edges are grouped into lines, is called line-fitting.</p>
+        <h3>Extracting</h3>
+        <p>The extracting operation computes for each group of pixels a list of properties. Example,
+            properties might include its centroid, area, orientation, spatial moments, gray tone moments,
+            spatial-gray tone moments, circumscribing circle, inscribing circle, and so on. Other properties
+            might depend on whether the group is considered a region or an arc. If the group is a region, the
+            number of holes might be a useful property. If the group is an arc, average curvature might be a
+            useful property.</p>
+            <p>Extraction can also measure topological or spatial relationships between two or more
+                groupings. For example, an extracting operation may make explicit that two groupings touch, or
+                are spatially close, or that one grouping is above another.</p>
+                <h3>Matching</h3>
+                <p>
+                    After the completion of the extracting operation, the events occurring on the image have
+been identified and measured. The matching operation determines the interpretation of some
+related set of image events, associating these events with some given three-dimensional object or
+two-dimensional shape. There are a wide variety of matching operations. The classical example
+is template matching, which compares the examined pattern with stored models (templates) of
+known patterns and chooses the best match.
+                </p>
+</body>
+</html>

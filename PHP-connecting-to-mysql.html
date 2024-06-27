@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>PHP Unit 4</title>
+<style>
+body 
+{
+font-family: Times New Roman;
+}
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+div
+{
+background-color:black;
+color:white;
+width:50%;
+}
+</style>
+</head>
+<body>
+<h2>Connecting to MySQL through PHP</h2>
+In order to store or access the data inside a MySQL database, we first need to connect to
+the MySQL database server. PHP offers two different ways to connect to MySQL
+server: MySQLi (Improved MySQL) and PDO (PHP Data Objects) extensions.
+<h2>Connecting to MySQL Database Server</h2>
+In PHP we can easily do this using the mysqli_connect() function. All communication
+between PHP and the MySQL database server takes place through this connection. Here're the
+basic syntaxes for connecting to MySQL using MySQLi and PDO extensions:
+<pre>
+Syntax: MySQLi, Procedural way
+	$link = mysqli_connect("hostname", "username", "password", "database");
+Syntax: MySQLi, Object Oriented way
+	$mysqli = new mysqli("hostname", "username", "password", "database");
+Syntax: PHP Data Objects (PDO) way
+	$pdo = new PDO("mysql:host=hostname;dbname=database", "username", "password");
+</pre>
+The hostname parameter in the above syntax specify the host name (e.g. localhost), or IP address
+of the MySQL server, whereas the username and password parameters specifies the credentials
+to access MySQL server, and the database parameter, if provided will specify the default
+MySQL database to be used when performing queries.
+<h2>Closing the MySQL Database Server Connection</h2>
+The connection to the MySQL database server will be closed automatically as soon as the
+execution of the script ends. However, if we want to close it earlier we can do this by simply
+calling the PHP mysqli_close() function.

@@ -1,0 +1,220 @@
+<html>
+<head>
+<title>PHP Unit 4</title>
+<style>
+body 
+{
+font-family: Times New Roman;
+}
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+div
+{
+background-color:black;
+color:white;
+width:50%;
+}
+</style>
+</head>
+<body>
+<h2>Cookies in PHP</h2>
+Cookie is a small piece of information stored as a file in the user's browser by the web
+server. Once created, cookie is sent to the web server as header information with every HTTP
+request. We can use cookie to save any data but it should not exceed 1K(1024 bytes) in size.
+Use of Cookies
+<ol>
+<li>To store user information like when he/she visited, what pages were visited on the
+website etc, so that next time the user visits our website we can provide a better user
+experience.</li>
+<li>To store basic website specific information to know this is not the first visit of user.</li>
+<li>We can use cookies to store number of visits or view counter.</li>
+</ol>
+<h3>Types of Cookies</h3>
+There are two types of cookies, they are:
+<ol>
+<li>Session Cookie: This type of cookies are temporary and are expire as soon as the session
+ends or the browser is closed.</li>
+<li>Persistent Cookie: To make a cookie persistent we must provide it with an expiration
+time. Then the cookie will only expire after the given expiration time, until then it will be
+a valid cookie.</li>
+</ol>
+<h3>Creating a Cookie in PHP</h3>
+In PHP we can create/set a cookie using the setcookie() function.
+<p>Below we have the syntax for the function,</p>
+<pre>
+	setcookie(name, value, expire, path, domain, secure)
+</pre>
+The first argument which defines the name of the cookie is mandatory, rest all are optional
+arguments. Let's understand what are the available arguments that we can supply to
+the setcookie() function to set a cookie.
+<table width="50%">
+<tr><th width="20%">Argument</th><th>Purpose</th></tr>
+<tr><td width="20%">Name</td><td>Used to specify the name of the cookie. It is a mandatory argument.Name of the cookie must be a string</td></tr>
+<tr><td width="20%">Value</td><td>Used to store any value in the cookie. It is generally saved as a pair with name. For example, name is userid and value is 7007, the userid for any user</td></tr>
+<tr><td width="20%">Expire</td><td>Used to set the expiration time for a cookie. if we do not provide any value, the cookie will be treated as a session cookie and will expire when the browser is closed</td></tr>
+<tr><td width="20%">Path</td><td>Used to set a web URL in the cookie. If set, the cookie will be accessible only from that URL. To make a cookie accessible through a domain, set '/' as cookie path</td></tr>
+<tr><td width="20%">Domain</td><td>The domain of our web application. It can be used to limit access of cookie for sub-domains. For example, if you set the domain value as www.studytonight.com, then the cookie will be inaccessible from blog.studytonight.com</td></tr>
+<tr><td width="20%">Secure</td><td>If we set this to 1, then the cookie will be available and sent only over HTTPS connection</td></tr>
+</table>
+<h3>Updating Cookie in PHP</h3>
+To update/modify a cookie, simply set it again. For example, if we want to update the
+username stored in the cookie created, we can do it using setcookie() method again,
+<pre>
+< ?php
+// updating the cookie
+setcookie("username", "iamNOTabhishek", time()+60*60*24*7);
+? >
+< html >
+< body >
+< ?php
+// check if the cookie exists
+if(isset($_COOKIE["username"]))
+{
+	echo "Cookie set with value: ".$_COOKIE["username"];
+}
+else
+{
+	echo "cookie not set!";
+}
+? >
+< /body >
+< /html >
+</pre>
+<h3>Delete a Cookie in PHP</h3>
+To delete/remove a cookie, we need to expire the cookie, which can be done by updating
+the cookie using the setcookie() function with expiration date in past.
+<pre>
+< ?php
+// updating the cookie
+setcookie("username", "iamNOTabhishek", time() - 3600);
+? >
+< html >
+< body >
+< ?php
+echo "cookie username is deleted!";
+? >
+< /body >
+< /html >
+</pre>
+<h2>Sessions in PHP</h2>
+To store information accessible across web pages, we use sessions. Session is not stored
+on the user browser like cookie, hence it is a more secure option.
+<p>Let's take a practical example, when we log into our facebook account, by providing our
+email address and password, until and unless we logout, the web application remembers who we
+are and display what our friends are posting and liking on our News Feed, we can update our
+profile, send someone message, join a group etc, this is accomplished by Session.</p>
+When a user logs into their account on any web application, a session is created for them,
+and in the session their username or userid or some other unique identifier is stored, which is
+then used on the consecutive webpages to show information specific to that user. On logout, the
+session is destroyed.
+<p>Session is not limited by any size limit, we can store any information in the session,
+irrespective of its size.</p>
+<h3>Use of Session</h3>
+<ol>
+<li>Web applications which require a user to login, use session to store user information, so
+that on every webpage related information can be displayed to the user.</li>
+<li>In eCommerce websites, shopping cart is geberally saved as part of session.</li>
+</ol>
+<h3>Start a Session in PHP</h3>
+In PHP we can start a session by using the session_start() function. And data is stored in
+the session using session variable, which can be assigned different values using global
+variable $_SESSION
+<p>In simpler words, using the function session_start() we initialize the session, in which we can
+store information using the session variable $_SESSION.<p>
+Let's take an example, below we have a webpage with Php file named first_page.php
+<pre>
+< ?php
+// start the session
+session_start();
+// set the session variable
+$_SESSION["username"] = "iamabhishek";
+$_SESSION["userid"] = "1";
+? >
+< html >
+< body >
+< ?php
+echo "Session variable is set.";
+? >
+< a href="second_page.php" >Go to Second Page< /a >
+< /body >
+< /html >
+</pre>
+<h3>Getting PHP Session Variable Values</h3>
+In the code above, we have started a session and set two session variables. Above webpage will
+also have a link to navigate to Second page second_page.php.
+<p>Below is the code for second_page.php, in which we fetch values from the session variable
+which are set in the first_page.php.</p>
+<pre>
+< ?php
+// start the session
+session_start();
+// get the session variable values
+$username = $_SESSION["username"];
+$userid = $_SESSION["userid"];
+? >
+< html >
+< body >
+< ?php
+echo "Username is: ".$username."< br/ >";
+echo "User id is: ".$userid;
+? >
+< /body >
+< /html >
+</pre>
+<b>Output:</b>
+<pre>
+Username is: iamabhishek
+User id is: 1
+</pre>
+session_start() function is used to initialize a new session and to fetch the ongoing session(if
+already started), and then, using the $_SESSION global variable, we can either set new values
+into the session or get the saved values.
+<h3>Update Session Variable in PHP</h3>
+To update any value stored in the session variable, start the session by
+calling session_start() function and then simply overwrite the value to update session variable.
+<pre>
+< ?php
+// start the session
+session_start();
+// update the session variable values
+$_SESSION["userid"] = "1111";
+? >
+< html >
+< body >
+< ?php
+echo "Username is: ".$username."<br/>";
+echo "User id is: ".$userid;
+? >
+< /body >
+< /html >
+</pre>
+<b>Output:</b>
+<pre>
+Username is: iamabhishek
+User id is: 1111
+We just updated the value of userid in the session variable from 1 to 1111.
+</pre>
+<h3>Destroy a Session in PHP</h3>
+To clean the session variable or to remove all the stored values from the session variable
+we can use the function session_unset() and to destroy the session, we
+use session_destroy() function.
+<pre>
+< ?php
+// start the session
+session_start();
+? >
+< html >
+< body >
+< ?php
+// clean the session variable
+session_unset();
+// destroy the session
+session_destroy();
+? >
+< /body >
+< /html >
+</body>
+</html>

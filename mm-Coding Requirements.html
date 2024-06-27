@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Requirements</title>
+</head>
+<body>
+    <h3>Coding Requirements</h3>
+    <p>Images have considerably higher storage requirements than text, and audio and video have still
+        more demanding properties for data storage. Moreover, transmitting continuous media also
+        requires substantial communication data rates.</p>
+        <p>In order to be able to compare the different data storage and bandwidth requirements of
+            various visual media (text, graphics, images, and video), the following specifications are based
+            on a small window of 640×480 pixels on a display.</p>
+            <ol>
+                <li>For the representation of the text medium, two bytes are used for every 8×8 pixel
+                    character.</li>
+                    <img src="pixel char.png" alt="pixel char" width="700" height="400">
+                <li>For the representation of vector images, a typical image consists of 500 lines. Each line
+                    is defined by its coordinates in the x direction and the y direction, and by an 8-bit
+                    attribute field. Coordinates in the x direction require 10 bits (log2 (640)), while
+                    coordinates in the y direction require 9 bits (log2 (480)).</li>
+                    <img src="bits per line.png" alt="bits per line" width="700" height="400">  
+                <li>Individual pixels of a bitmap can be coded using 256 different colors, requiring a single
+                    byte per pixel.</li>
+              
+            </ol>
+    
+</body>
+</html>

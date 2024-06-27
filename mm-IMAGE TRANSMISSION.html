@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGE TRANSMISSION in MULTIMEDIA</title>
+</head>
+<body>
+    <H3>IMAGE TRANSMISSION</H3>
+    <p>Image transmission takes into account transmission of digital images through computer
+        networks. There are several requirements on the networks when images are transmitted:</p>
+        <ol>
+            <Li>The network must accommodate bursty data transport because image transmission is
+                bursty (The burst is caused by the large size of the image).</Li>
+            <Li>Image transmission requires reliable transport;</Li>
+            <Li>Time-dependence is not a dominant characteristic of the image in contrast to audio
+                video transmission.</Li>
+           <p>Image size depends on the image representation format used for transmission. There are several
+            possibilities:</p></ol>
+          <ul> 
+            <li><p><b>Raw image data transmission:</b>In this case, the image is generated through a video
+                digitizer and transmitted in its digital format. The size can be computed in the following
+                manner:</p>
+                <dfn=>𝑠𝑖𝑧𝑒 = 𝑠𝑝𝑎𝑡𝑖𝑎𝑙_𝑟𝑒𝑠𝑜𝑙𝑢𝑡𝑖𝑜𝑛 × 𝑝𝑖𝑥𝑒𝑙_𝑞𝑢𝑎𝑛𝑡𝑖𝑧𝑎𝑡𝑖𝑜𝑛</dfn>
+                <p>For example, the transmission of an image with a resolution of 640x 480 pixel and pixel
+                    quantization of 8 bits per pixel requires transmission of 307,200 bytes through the network.</p>
+<li><b>Compressed image data transmission:</b> In this case, the image is generated through a
+    video digitizer and compressed before transmission. Methods such as JPEG or MPEG are
+    used to downsize the image. The reduction of image size depends on the compression
+    method and compression rate.</li>
+    <li><b>Symbolic image data transmission:</b> In this case, the image is represented through
+        symbolic data representation as image primitives (e.g. 2D or 3D geometric
+        representation), attributes and other control information.</li>
+
+        </ul>
+    
+</body>
+</html>

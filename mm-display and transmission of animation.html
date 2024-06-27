@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISPLAY and TRANSMISSION OF ANIMATION</title>
+</head>
+<body>
+    <h3>DISPLAY OF ANIMATION</h3>
+    <p>To display animations with raster systems, animated objects (which may consist of
+        graphical primitives such as lines, polygons, and so on) must be scan-converted into their pixmap
+        in the frame buffer. To show a rotating object, we can scan-convert into the pixmap successive
+        views from slightly different locations, one after another. This scan-conversion must be done at
+        least 10 (preferably 15 to 20) times per second to give a reasonably smooth effect: hence a new
+        image must be created in no more than 100 milliseconds.</p>
+       <h3 >TRANSMISSION OF ANIMATION </h3> 
+       <p>Animated objects may be represented symbolically using graphical objects or scan-converted
+        pixmap images. Hence, the transmission of animation over computer networks may be
+        performed using one of two approaches:</p>
+     <ul>
+        <LI>The symbolic representation (e.g., circle) of animation objects (e.g., ball) is transmitted
+            together with the operation commands (e.g., roll the ball) performed on the object. In this
+            case, the transmission time is short because the symbolic representation of an animated
+            object is smaller in byte size than its pixmap representation, but the display time at the
+            receiver takes longer because the scan-converting operation has to be performed at the
+            receiver side. In this approach, the transmission rate (bits/second or bytes/second) of
+            animated objects depends</LI>
+            <ol id="roman">
+                <li>On the size of the symbolic representation structure, where the animated object is
+                    encoded,</li>
+                    <li>On the size of the structure, where the operation command is encoded,</li>
+                    <li>On the number of animated objects and operation commands sent per second.</li>
+            </ol>
+            <li>The pixmap representation of the animated objects is transmitted and displayed on the
+                receiver side. In this case, the transmission time is longer in Comparison to the previous
+                approach because of the size of the pixmap representation, but the display time is shorter
+                because the scan-conversion of the animated objects is avoided at the receiver side. It is
+                performed at the sender side where animation objects and operation commands are
+                generated.
+               <p>In this approach, the transmission rate of the animation is equal to the size of the pixmap
+                representation of an animated object (graphical image) multiplied by the number of
+                graphical images per second.</p></li>
+     </ul>   
+    
+</body>
+</html>

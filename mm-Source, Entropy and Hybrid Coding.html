@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source, Entropy and Hybrid Coding</title>
+</head>
+<body>
+    <h3>Source, Entropy and Hybrid Coding</h3>
+    <p>Compression techniques can be categorized as shown in Table below. We distinguish
+        among three types of coding: entropy, source, and hybrid coding. Entropy coding is a lossless
+        process, while source coding is often lossy. Most multimedia systems use hybrid techniques
+        which are combination of the two.</p>
+        <p>Table: Overview of some coding and compression techniques.</p>
+        <img src="table overview.png" alt="table overview" width="700" height="500">
+        <h3>Entropy Coding</h3>
+        <p>Entropy coding can be used for different media regardless of the medium’s specific
+            characteristics. The data to be compressed are viewed as a sequence of digital data values, and
+            their semantics are ignored. It is lossless because the data prior to encoding is identical to the
+            data after decoding; no information is lost. Thus run-length encoding, for example, can be used for compression of any type of data in a file system, for example, text, still images for facsimile,
+            or as part of motion picture or audio coding.</p>
+            <h3>Source Coding</h3>
+            <p>Source coding takes into account the semantics of the information to be encoded. The
+                degree of compression that can be reached by source encoding depends on the data contents. In
+                the case of lossy compression, a relation exists between the uncoded data and the decoded data;
+                the data streams are similar but not identical. The characteristics of the medium can be exploited.
+                In the case of speech, a considerable reduction of the amount of data can be achieved by
+                transforming the time-dependent signal into the frequency domain, followed by an encoding of
+                the formants.</p>
+                <p>In the case of still images, spatial redundancies can be used for compression through a
+                    content prediction technique. Other techniques perform a transformation of the spatial domain
+                    into the two-dimensional frequency domain by using the cosine transform. Low frequencies
+                    define the average color, and the information of higher frequencies contains the sharp edges.
+                    Hence, low frequencies are much more important than the higher frequencies, a feature that can
+                    be used for compression.</p>
+           
+
+
+        
+    
+</body>
+</html>

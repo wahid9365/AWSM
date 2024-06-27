@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>PHP Unit 1</title>
+<style>
+body 
+{
+font-family: Times New Roman;
+}
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+div
+{
+background-color:black;
+color:white;
+width:50%;
+}
+</style>
+</head>
+<body>
+<h2>PHP Strings</h2>
+A string is a collection of characters. String is one of the data types supported by PHP. The string variables can contain alphanumeric characters. Strings are created when;
+<ul>
+<li>We declare variable and assign string characters to it</li>
+<li>We can directly use them with echo statement.</li>
+<li>String are language construct, it helps capture words.</li>
+</ul>
+<h2>Create strings in PHP</h2>
+The four different ways of creating strings in PHP:
+<ul><li><h3>Creating Strings Using Single quotes</h3>
+The simplest way to create a string is to use single quotes. For example, consider the following PHP codes that create a simple string in PHP.
+<pre>
+< ?php
+var_dump('You need to be logged in to view this page');
+? >
+</pre>
+Output:
+<pre>string(42) "You need to be logged in to view this page"</pre></li>
+<li><h3>PHP Create Strings Using Double quotes</h3>
+The double quotes are used to create relatively complex strings compared to single quotes. Variable names can be used inside double quotes and their values will be displayed.
+<p>Example.</p>
+<pre>
+< ?php
+	$name='Alicia';
+	echo "$name is friends with Kalinda";
+? >
+</pre>
+HERE,
+<ul>
+<li>The above example creates a simple string with the value of Alicia.</li>
+<li>The variable name is then used in the string created using double quotes and its value is interpolated at run time.</li>
+</ul>
+Output:
+<pre>Alicia is friends with Kalinda</pre></li>
+<li><h3>PHP Heredoc</h3>
+This heredoc methodology is used to create fairly complex strings as compared to double quotes. The heredoc supports all the features of double quotes and allows creating string values with more than one line without php string concatenation. Using double quotes to create strings that have multiple lines generates an error.
+<p>The example below illustrates how the Heredoc method is used to create string values.</p>
+<pre>
+< ?php
+	$baby_name = "Shalon";
+	echo <<< EOT
+	When $baby_name was a baby,
+	She used to look like a "boy".
+	EOT;
+? >
+</pre>
+HERE,
+<br><<< EOT is the string delimiter. EOT is the acronym for end of text. It should be defined in its on line at the beginning of the string and at the end.</li>
+<li><h3>PHP Nowdoc</h3>
+The Nowdoc string creation method is similar to the heredoc method but works like the way single quotes work. No parsing takes place inside the Nowdoc. Nowdoc is ideal when working with raw data that do not need to be parsed.
+<p>The code below shows the Nowdoc implementation</p>
+<pre>
+< ?php
+	$baby_name = "Shalon";
+	$my_variable = <<<'EOT'
+		When $baby_name was a baby,
+		She used to look like a "boy".
+	EOT;
+	echo $my_variable;
+? >
+</pre>
+Output:
+<pre>When $baby_name was a baby, She used to look like a "boy".</pre></li>
+</ul>
+<h3>Built-in String functions</h3>
+Built-in functions in PHP are some existing library functions that can be used directly in our programs making an appropriate call to them. Below are some important built-in string functions that we use in our daily and regular programs:
+<ol>
+<li>strlen() function: This function is used to find the length of a string. This function accepts the string as an argument and returns the length or number of characters in the string.
+<p>Example:</p>
+<pre>
+< ?php
+    echo strlen("Hello GeeksforGeeks!");
+? >
+</pre>
+Output:
+<pre>20</pre>
+</li>
+<li>strrev() function: This function is used to reverse a string. This function accepts a string as an argument and returns its reversed string.
+<p>Example:</p>
+<pre>
+< ?php
+    echo strrev("Hello Silchar!");
+? >
+</pre>
+Output:
+<pre>!rahcliS olleH</pre>
+</li>
+<li>str_replace() function: This function takes three strings as arguments. The third argument is the original string and the first argument is replaced by the second one. In other words, we can say that it replaces all occurrences of the first argument in the original string with the second argument.
+<p>Example:</p>
+<pre>
+< ?php
+    echo str_replace("Geeks", "World", "Hello GeeksforGeeks!"), "\n";
+    echo str_replace("for", "World", "Hello GeeksforGeeks!"), "\n";
+? >
+</pre>
+Output:
+<pre>
+Hello WorldforWorld!
+Hello GeeksWorldGeeks!
+</pre>
+In the first example, we can see that all occurrences of the word “Geeks” are replaced by “World” in “Hello GeeksforGeeks!”.
+</li>
+<br>
+<li>strpos() function: This function takes two string arguments and if the second string is present in the first one, it will return the starting position of the string otherwise returns FALSE.
+<p>Example:</p>
+<pre>
+< ?php
+echo strpos("Hello GeeksforGeeks!", "Geeks"), "\n";
+echo strpos("Hello GeeksforGeeks!", "for"), "\n";
+var_dump(strpos("Hello GeeksforGeeks!", "Peek"));
+? >
+</pre>
+Output:
+<pre>
+6
+11
+bool(false)
+</pre>
+We can see in the above program, in the third example the string “Peek” is not present in the first string, hence this function returns a boolean value false indicating that string is not present.
+</li>
+<br>
+<li>trim() function: This function allows us to remove whitespaces or strings from both sides of a string.
+<br>Example:
+<pre>
+< ?php
+echo trim("Hello World!", "Hed!");
+? >
+</pre>
+Output:
+<pre>llo Worl</pre>
+</li>
+<li>explode() function: This function converts a string into an array.
+<br>Example:
+<pre>
+< ?php
+$input = "Welcome to geeksforgeeks";
+print_r(explode(" ",$input));
+? >
+</pre>
+Output:
+<pre>Array ( [0] => Welcome [1] => to [2] => geeksforgeeks )</pre>
+</li>
+<li>strtolower() function: This function converts a string into the lowercase string.
+<br>Example:
+<pre>
+< ?php
+$input = "WELCOME TO GEEKSFORGEEKS";
+echo strtolower($input);
+? >
+</pre>
+Output:
+<pre>welcome to geeksforgeeks</pre>
+</li>
+<li>strtoupper() function: This function converts a string into the uppercase string.
+<br>Example:
+<pre>
+< ?php
+$input = "Welcome to geeksforgeeks";
+echo strtoupper($input);
+? >
+</pre>
+Output:
+<pre>WELCOME TO GEEKSFORGEEKS</pre>
+</li>
+<li>strwordcount() function: This function counts total words in a string.
+<br>Example:
+<pre>
+< ?php
+$input = "Welcome to GeeksforGeeks";
+echo str_word_count($input);
+? >
+</pre>
+Output:
+<pre>3</pre>
+</li>
+<li>substr() function: This function gives the substring of a given string from a given index.
+<br>Example:
+<pre>
+< ?php
+$input = "Welcome to geeksforgeeks";
+echo(substr($input,3));
+? >
+</pre>
+Output:
+<pre>come to geeksforgeeks</pre>
+</li>
+</ol>
+</body>
+</html>

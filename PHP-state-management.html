@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>PHP Unit 4</title>
+<style>
+body 
+{
+font-family: Times New Roman;
+}
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+div
+{
+background-color:black;
+color:white;
+width:50%;
+}
+</style>
+</head>
+<body>
+<h2>State Management</h2>
+HTTP is a stateless protocol which means every user request is processed independently
+and it has nothing to do with the requests processed before it. Hence there is no way to store or
+send any user specific details using HTTP protocol.
+<p>But in modern applications, user accounts are created and user specific information is shown to
+different users, for which we need to have knowledge about who the user (or what he/she wants
+to see etc) is on every webpage.</p>
+<p>PHP provides for two different techniques for state management of our web application, they
+are:
+<ol>
+<li>Server Side State Management</li>
+<li>Client Side Server Management</li>
+</ol>
+</p>
+<h3>Server Side State Management</h3>
+In server side state management we store user specific information required to identify
+the user on the server. And this information is available on every webpage.
+<p>In PHP we have Sessions for server side state management. PHP session variable is used to store
+user session information like username, userid etc and the same can be retrieved by accessing the
+session variable on any webpage of the web application until the session variable is destroyed.</p>
+<h3>Client Side State Management</h3>
+In client side state management the user specific information is stored at the client side
+i.e. in the browser. Again, this information is available on all the web pages of the web
+application.
+<p>In PHP we have Cookies for client side state management. Cookies are saved in the browser
+with some data and expiry date (till when the cookie is valid).<p>
+One drawback of using cookie for state management is the user can easily access the cookie
+stored in their browser and can even delete it.

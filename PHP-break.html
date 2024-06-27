@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>PHP Unit 1</title>
+<style>
+body 
+{
+font-family: Times New Roman;
+}
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+div
+{
+background-color:black;
+color:white;
+width:50%;
+}
+</style>
+</head>
+<body>
+<h2>PHP Break</h2>
+The break statement used to "jump out" of a switch statement. The break statement can also be used to jump out of a loop.
+<p>This example jumps out of the loop when x is equal to 4:</p>
+<pre>
+< ?php
+for ($x = 0; $x < 10; $x++) {
+    if ($x == 4) {
+	break;
+    }
+    echo "The number is: $x <br>";
+}
+? >
+</pre>
+<h2>PHP Continue</h2>
+The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+<p>This example skips the value of 4:</p>
+Example
+<pre>
+< ?php
+for ($x = 0; $x < 10; $x++) {
+    if ($x == 4) {
+	continue;
+    }
+    echo "The number is: $x <br>";
+}
+? >
+</pre>
+</body>
+</html>
