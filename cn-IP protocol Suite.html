@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP/IP protocol Suite</title>
+</head>
+<body>
+    <h3>TCP/IP protocol Suite</h3>
+    TCP/IP is a hierarchical protocol made up of interactive modules, each of which
+    provides a specific functionality. The modules are not necessary interdependent. The OSI
+    model specifies which function belongs to each of its layers. The layers of the TCP/IP
+    protocol suite contain relatively independent protocols that can be mixed and matched
+    depending on the needs of the system
+    <p>The term hierarchical means that each upper-level protocol is supported by one or
+        more lower level protocols. The TCP/IP protocol suite made of five layers:</p>
+        <ol type="i">
+            <li>Physical layer</li>
+            <li>Data link layer</li>
+            <li>Network layer</li>
+            <li>Transport layer</li>
+            <li>Application layer</li>
+        </ol> 
+    <article>
+        <h3>Physical and Data link layer</h3>
+        These layers support all the standard and proprietary protocols. A network in a
+TCP/IP internetwork can be LAN or WAN
+    </article>
+    <article>
+        <h3>Network Layer</h3>
+        At the network layer, TCP/IP supports the Internetworking Protocol (IP) and uses four
+supporting protocols: ARP, RARP, ICMP and IGMP.
+    </article>
+    <article>
+        <h3>Internetworking Protocol (IP)</h3>
+        The IP is the transmission mechanism used by the TCP/IP protocols. It is unreliable
+and connectionless protocols- a best effort delivery service.
+<p>The IP transport data in packets called datagrams, each of which transported
+    separately. Datagrams can travel along different routing and can arrive out of sequence or be
+    duplicated. IP does not keep track of the routes and has no facilities for reordering datagrams
+    once they arrive at their destination.</p>
+    </article>
+    <article>
+        <h3>Address Resolution Protocol (ARP)</h3>
+        ARP is used to associate a logical address with a physical address. ARP is used to
+        find the physical address of the node when its internet address in known.
+        <p>On a typical physical network such as LAN, each device on a link is identified by a
+            physical or station address, usually imprinted on the Network Interface Card (NIC).</p>    
+        <h3>Reverse Address Resolution Protocol (RARP</h3>
+        RARP allows a host to discover its Internet address when it knows only its physical
+        address. It is used when a computer is connected to a network for the first time.    
+    <h3>Internet Control Message Protocol (ICMP)</h3>
+    ICMP is a mechanism used by host and gateways to send notification of datagram
+problems back to the sender. ICMP sends query and error reporting message
+<h3>Internet group Message Protocol (IGMP)</h3>
+IGMP used to facilitate the simultaneous transmission of message to a group of
+recipients.
+    </article>
+    <article>
+        <h3>Transport Layer</h3>
+        The transport layer represented in TCP/IP by two protocols: TCP and UDP.
+        <p>TCP and UDP responsible for delivery of message from a process to another process.</p>
+
+        <h3>User Datagram Protocol (UDP)</h3>
+        UDP is a process-to-process protocol that adds only port address, checksum error
+control and length information to the data from the upper layer.
+    </article>
+    <article>
+        <h3>Transmission Control protocol (TCP)</h3>
+        TCP is a reliable connection oriented protocol. A connection must be established
+between both ends of a transmission before either can transmit data.
+<p>At the sending end of each transmission, TCP divides a stream of data into smaller
+    units called segments. Each segment includes a sequence number for reordering after receipt,
+    together with an acknowledgement number for the segment received.</p>
+    <p>At the receiving end, TCP collects each datagrams as it comes in and reorders the
+        transmission based on sequence numbers.</p>
+    </article>
+
+    <article>
+        <h3>Application Layer</h3>
+        The application Layer provides service to the use.
+        <h4>ADDRESSING</h4>
+        Four levels of addresses are used in an internet employing the TCP/IP protocols: physical
+        (link) addresses, logical (IP) addresses, port addresses, and specific addresses.
+    
+    </article>
+    
+    <p>Each address is related to a specific layer in the TCPIIP architecture, as shown in below
+        Figure.</p>
+        
+
+    <article>
+        <h3></h3>
+    </article>
+
+
+    <article>
+        <h3></h3>
+    </article>
+
+
+    
+
+
+</body>
+</html>

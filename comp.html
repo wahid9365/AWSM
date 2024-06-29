@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>Fundamentals of Computer</title>
+    <style>
+        /* Internal CSS */
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .topic-link {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <!-- Topic links will be added dynamically -->
+    </div>
+    <div class="content" id="content">
+<h2>Introduction</h2>
+A computer is an electronic device, operating under the control of instructions stored
+in its own memory that can accept data (input), process the data according to specified
+rules, produce information (output), and store the information for future use.
+<p>A computer is also called a data processor because it can store, process, and retrieve data whenever desired.
+<br><img src="comp1.png"style="width:400px"></p>
+            </div>
+    
+    <script>
+        // Define your topics and content
+        var topics = [
+            {
+                title: '~Introduction',
+                content: '<html><iframe style="height:200%; width:100%; border:none;" src="comp-intro.html"></iframe></html>'
+            },
+            {
+                title: '~Characteristics of Computer',
+                content: '<html><iframe style="height:210%; width:100%; border:none;" src="comp-computer characteristics.html"></iframe></html>'
+            },
+            {
+                title: '~Computer Processes',
+                content: '<html><iframe style="height:500%; width:100%; border:none;" src="comp-processes.html"></iframe></html>'
+            },
+            {
+                title: '~Computer Components',
+                content: '<html><iframe style="height:850%; width:100%; border:none;" src="comp-computer components.html"></iframe></html>'
+            },
+            {
+                title: '~Computer Classifications',
+                content: '<html><iframe style="height:160%; width:100%; border:none;" src="comp-computer classifications.html"></iframe></html>'
+            },
+            {
+                title: '~Units of Measurement',
+                content: '<html><iframe style="height:220%; width:100%; border:none;" src="comp-units of measurements.html"></iframe></html>'
+            },
+            {
+                title: '~HCI',
+                content: '<html><iframe style="height:1450%; width:100%; border:none;" src="comp-HCI.html"></iframe></html>'
+            },
+
+        ];
+        
+        // Function to create topic links
+        function createTopicLinks() {
+            var sidebarDiv = document.getElementById("sidebar");
+            
+            topics.forEach(function(topic) {
+                var topicLink = document.createElement("a");
+                topicLink.classList.add("topic-link");
+                topicLink.textContent = topic.title;
+                topicLink.onclick = function() {
+                    showContent(topic.content);
+                };
+                sidebarDiv.appendChild(topicLink);
+            });
+        }
+        
+        // Function to show content
+        function showContent(content) {
+            var contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = content;
+        }
+        
+        // Call the createTopicLinks function to generate the links
+        createTopicLinks();
+    </script>
+</body>
+</html>

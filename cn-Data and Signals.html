@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data and Signals</title>
+</head>
+<body>
+    <h3>Data and Signals</h3>
+    <article>
+        <h3>Analog Data</h3>
+        The term analog data refers to information that is continuous. For example, an analog
+        clock that has hour, minute, and second hands gives information in a continuous form; the
+        movements of the hands are continuous. Analog data, such as the sounds made by a human
+        voice, take on continuous values. 
+    </article>
+    <article>
+        <h3>Digital Data</h3>
+        The digital data refers to information that has discrete states. Digital data take on discrete
+values. For example, data are stored in computer memory in the form of Os and 1s. They can be
+converted to a digital signal or modulated into an analog signal for transmission across a
+medium.
+    </article>
+    <article>
+        <h3>Analog Signals</h3>
+        Analog signals can have a infinite number of values in a range. As the wave moves from
+value A to value B, it passes through and includes an infinite number of values along its path.<br>
+ <img src="analog signal.png" alt="Analog Signal"height="200" width="500" style="vertical-align:center";>   
+</article>
+    <article>
+        <h3>Digital Signals</h3>
+        Digital signals can have only a limited number 
+        <img src="digital signal.png" alt="Digital Signal"height="200" style="vertical-align:center";>  
+    </article>
+    <article>
+        <h3>Periodic and Nonperiodic Signals</h3>
+        A periodic signal completes a pattern within a measurable time frame, called a period, and
+repeats that pattern over subsequent identical periods. The completion of one full pattern is
+called a cycle. A nonperiodic signal changes without exhibiting a pattern or cycle that repeats
+over time.
+<p>In data communications, we commonly use periodic analog signals and nonperiodic
+    digital signals</p>
+    </article>
+    <article>
+        <h3>Periodic Analog Signal</h3>
+        Periodic analog signals can be classified as simple or composite. A simple periodic
+analog signal, a sine wave, cannot be decomposed into simpler signals. A composite periodic
+analog signal is composed of multiple sine waves.
+    </article>
+    <article>
+        <h3>Sine Wave</h3>
+        The sine wave is the most fundamental form of a periodic analog signal. When we
+visualize it as a simple oscillating curve, its change over the course of a cycle is smooth and
+consistent, a continuous, rolling flow. Below Figure shows a sine wave.<br>
+<img src="sine wave.png" alt="A sine Wave"height="200" style="vertical-align:center";>    
+<p>A sine wave can be represented by three parameters: the peak amplitude, the frequency, and the
+phase.</p>
+</article>
+    <article>
+        <h3>Peak Amplitude</h3>
+        The peak amplitude of a signal is the absolute value of its highest intensity, proportional
+to the energy it carries. For electric signals, peak amplitude is normally measured in volts. Below
+Figure shows two signals and their peak amplitudes.
+<img src="high peak.png" alt="High peak Amplitude"height="200" style="vertical-align:center";> <br> 
+<img src="low peak.png" alt="Low peak Amplitude"height="200" style="vertical-align:center";>   
+</article>
+    <article>
+        <h3>Period and Frequency</h3>
+        Period refers to the amount of time, in seconds, a signal needs to complete 1 cycle.
+Frequency refers to the number of periods in 1 s. Period is the inverse of frequency, and
+frequency is the inverse of period, as the following formulas show.
+<img src="frequency and period.png" alt="Frequency and Peroid are the inverse of each other" height="200" width="600";>
+
+</article>
+    <article>
+        <h3>Phase</h3>
+        The term phase describes the position of the waveform relative to time 0. If we think of
+the wave as something that can be shifted backward or forward along the time axis, phase
+describes the amount of that shift. It indicates the status of the first cycle.
+<p>Phase is measured in degrees or radians [360° is 2π rad; 1° is 2π/360 rad, and 1 rad is
+    360/(2π)]. A phase shift of 360° corresponds to a shift of a complete period; a phase shift of 180°
+    corresponds to a shift of one-half of a period; and a phase shift of 90° corresponds to a shift of
+    one-quarter of a period</p>
+    <img src="Three sine waves with the same amplitude and frequency, but different phases.png" alt="Three sine waves with the same amplitude and frequency, but different phases" height="400" width="500">
+    </article>
+    <article>
+        <h3>Wavelength</h3>
+        The wavelength is the distance a simple signal can travel in one period. Wavelength can
+be calculated if one is given the propagation speed (the speed of light) and the period of the
+signal.
+<p>However, since period and frequency are related to each other, if we represent
+    wavelength by 𝜆, propagation speed by c (speed of light), and frequency by f, we get
+    </p>
+    A=C/F
+    </article>
+    <article>
+        <h3>Composite Signal</h3>
+        The composite signal is a combination of simple sine waves with different frequencies,
+        amplitudes and phases.
+        <p>If the composite signal is periodic, the decomposition gives a signal with discrete
+            frequencies. On nonperiodic, composite signal gives a combination of sine waves with
+            continuous frequencies.</p> 
+            A normal human being can create a continuous range of frequencies between 0 to 4 Khz.
+    </article>
+<article>
+    <h3>Bandwidth</h3>
+    The range of frequencies contained in a composite signal is its bandwidth. The bandwidth is
+    normally a difference between two numbers. For example, if a composite signal contains
+    frequencies between 1000 and 5000, its bandwidth is 5000 - 1000, or 4000. The bandwidth of a
+    composite signal is the difference between the highest and the lowest frequencies contained in
+    that signal.   
+    <p>Below Figure shows the concept of bandwidth. The figure depicts two composite signals,
+        one periodic and the other nonperiodic. The bandwidth of the periodic signal contains all integer
+        frequencies between 1000 and 5000 (1000, 100 I, 1002, ...). The bandwidth of the nonperiodic
+        signals has the same range, but the frequencies are continuous</p>
+<img src="The bandwidth of periodic and nonperiodic composite signals.png" alt="The bandwidth of periodic and nonperiodic composite signals" height="400";>
+    </article>
+
+</body>
+</html>

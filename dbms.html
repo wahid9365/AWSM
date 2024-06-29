@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>DBMS</title>
+    <style>
+        /* Internal CSS */
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .topic-link {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <!-- Topic links will be added dynamically -->
+    </div>
+    <div class="content" id="content">
+<h1 align="center"><---Click on the Topics to view the Content...</h1>
+            </div>
+    
+    <script>
+        // Define your topics and content
+        var topics = [
+            {
+                title: '~Introduction',
+                content: '<html><iframe style="height:800%; width:100%; border:none;" src="dbms-intro.html"></iframe></html>'
+            },
+            {
+                title: '~Characteristics of DBMS',
+                content: '<html><iframe style="height:2000%; width:100%; border:none;" src="dbms-characteristics.html"></iframe></html>'
+            },
+            {
+                title: '~Advantages and Disadvantages of DBMS',
+                content: '<html><iframe style="height:3800%; width:100%; border:none;" src="dbms-adv and disadv.html"></iframe></html>'
+            },
+            {
+                title: '~Data Independence',
+                content: '<html><iframe style="height:900%; width:100%; border:none;" src="dbms-data independence.html"></iframe></html>'
+            },
+            {
+                title: '~Client-server Database Architecture',
+                content: '<html><iframe style="height:2000%; width:100%; border:none;" src="dbms-cs_arch.html"></iframe></html>'
+            },
+            {
+                title: '~DBMS Models',
+                content: '<html><iframe style="height:3800%; width:100%; border:none;" src="dbms-MODEL.html"></iframe></html>'
+            },
+            {
+                title: '~RDBMS',
+                content: '<html><iframe style="height:3100%; width:100%; border:none;" src="dbms-rdbms.html"></iframe></html>'
+            },
+
+        ];
+        
+        // Function to create topic links
+        function createTopicLinks() {
+            var sidebarDiv = document.getElementById("sidebar");
+            
+            topics.forEach(function(topic) {
+                var topicLink = document.createElement("a");
+                topicLink.classList.add("topic-link");
+                topicLink.textContent = topic.title;
+                topicLink.onclick = function() {
+                    showContent(topic.content);
+                };
+                sidebarDiv.appendChild(topicLink);
+            });
+        }
+        
+        // Function to show content
+        function showContent(content) {
+            var contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = content;
+        }
+        
+        // Call the createTopicLinks function to generate the links
+        createTopicLinks();
+    </script>
+</body>
+</html>

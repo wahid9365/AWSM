@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSMISSION MODES</title>
+</head>
+<body>
+    <h3>TRANSMISSION MODES</h3>
+    The transmission of binary data across a link can be accomplished in either parallel or
+serial mode.
+<ul>
+    <li>In parallel mode, multiple bits are sent with each clock tick.</li>
+    <li>In serial mode, 1 bit is sent with each clock tick.</li>
+    </ul>
+    Different data transmission modes are shown in below figure:  
+<img src="Data transmission and modes.png" alt="Data transmission and modes" height="200";>
+<article>
+    <h3>Parallel Transmission</h3>
+    In parallel transmission, binary data consisting of 0s and 1s are organized into a group of
+    n bits and send the group of n-bits at a time.
+    <p>The parallel transmission use n wires to send n bits at one time. That way each bit has its
+        own wire, and all n bits of one group can be transmitted with each clock tick from one device to
+        another. Below Figure shows how parallel transmission works for n =8.</p>
+        <img src="Parallel transmission.png" alt="Parallel transmission" height="150";>  
+</article>
+<article>
+    <h3>Serial Transmission</h3>
+    In serial transmission one bit follows another, so we need only one communication
+channel rather than n to transmit data between two communicating devices as shown in below
+figure:
+<img src="Serial transmission.png" alt="Serial transmission" height="200";>
+<p>Serial transmission occurs in one of three ways: asynchronous, synchronous, and isochronous.</p>
+</article>
+<article>
+    <h3>Asynchronous Transmission</h3>
+    In asynchronous transmission, we send 1 start bit (0) at the beginning and 1 or more stop
+bits (1s) at the end of each byte. There may be a gap between each byte. Below figure is a
+schematic illustration of asynchronous transmission. In this example, the start bits are 0s, the
+stop bits are 1s, and the gap is represented by an idle line.
+
+<img src="Asynchronous transmission.png" alt="Asynchronous transmission" height="250";>
+</article>
+<article>
+    <h3>Synchronous Transmission</h3>
+    In synchronous transmission, the bit stream is combined into longer "frames," which may
+    contain multiple bytes. Each byte, however, is introduced onto the transmission link without a
+    gap between it and the next one. It is left to the receiver to separate the bit stream into bytes for
+    decoding purposes. Below Figure gives a schematic illustration of synchronous transmission.
+    <img src="Synchronous transmission.png" alt="Synchronous transmission" height="200";>   
+</article>
+<article>
+    <h3>Isochronous Transmission</h3>
+    An isochronous data transfer system combines the features of an asynchronous and
+synchronous data transfer system. An isochronous data transfer system sends blocks of data
+asynchronously, in other words the data stream can be transferred at random intervals. Each
+transmission begins with a start packet. Once the start packet is transmitted, the data must be
+delivered with a guaranteed bandwidth. Isochronous data transfer is commonly used for where
+data must be delivered within certain time constraints, like streaming video.
+</article>
+
+
+
+
+</body>
+</html>

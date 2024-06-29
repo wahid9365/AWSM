@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANALOG-TO-DIGITAL CONVERSION</title>
+</head>
+<body>
+    <h3>ANALOG-TO-DIGITAL CONVERSION</h3>
+    <article>
+        <h3>Pulse Code Modulation (PCM)</h3>
+        The most common technique to change an analog signal to digital data (digitization) is
+        called pulse code modulation (PCM). A PCM encoder has three processes, as shown in below
+        Figure:
+        <img src="Components of PCM encoder.png" alt="Components of PCM encoder" height="150";>
+        <ul>
+            <li>The analog signal is sampled</li>
+            <li>The sampled signal is quantized.</li>
+            <li>The quantized values are encoded as streams of bits.</li>
+
+        </ul>  
+    </article>
+    <article>
+        <h3>Sampling</h3>
+        The first step in PCM is sampling. The analog signal is sampled every Ts s, where Ts is
+the sample interval or period. The inverse of the sampling interval is called the sampling rate or
+sampling frequency and denoted by fs, where fs = 1/Ts. There are three sampling methods-ideal,
+natural, and flat-top-as shown in Figure below.
+<img src="Three different sampling methods for PCM.png" alt="Three different sampling methods for PCM" height="150";>
+The sampling process is sometimes referred to as pulse amplitude modulation (PAM).
+</article>
+<article>
+    <h3>Quantization</h3>
+    The second step in PCM is quantization. The following are the steps in quantization:
+    <ol>
+        <li>We assume that the original analog signal has instantaneous amplitudes between Vmin
+            and Vmax.</li>
+        <li>We divide the range into L zones, each of height ∆ (delta).</li>
+        <li>We assign quantized values of 0 to L - I to the midpoint of each zone.</li>
+        <li>We approximate the value of the sample amplitude to the quantized values.</li>
+    </ol>
+    <p>As a simple example, assume that we have a sampled signal and the sample amplitudes are
+        between -20 and +20 V. We decide to have eight levels (L = 8). This means that ∆= 5 𝑉. Below
+        Figure shows this example.</p>
+</article>
+    <article>
+        <h3>Encoding</h3>
+        The last step in PCM is encoding. After each sample is quantized and the number of bits
+        per sample is decided, each sample can be changed to an nb-bit code word. A quantization code
+        of 2 is encoded as 010; 5 is encoded as 101; and so on.
+        <p>The number of bits for each sample is determined from the number of quantization levels.
+            If the number of quantization levels is L, the number of bits is nb =log2L.</p>
+            In our example L is 8 and nb is therefore 3. The bit rate can be found from the formula:
+            <pre>𝐵𝑖𝑡 𝑅𝑎𝑡𝑒 = 𝑠𝑎𝑚𝑝𝑙𝑖𝑛𝑔 𝑟𝑎𝑡𝑒 × 𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑏𝑖𝑡𝑠 𝑝𝑒𝑟 𝑠𝑎𝑚𝑝𝑙𝑒 = F𝑠 × N𝑏</pre>   
+    </article>
+</body>
+</html>

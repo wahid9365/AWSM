@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmission of Digital Signal</title>
+</head>
+<body>
+    <h3>Transmission of Digital Signal</h3>
+    We can transmit a digital signal by using one of two different approaches: baseband
+    transmission or broadband transmission (using modulation).  
+  <article>
+    <h3>Baseband Transmission</h3>
+    Baseband transmission means sending a digital signal over a channel without changing
+the digital signal to an analog signal. Below Figure shows baseband transmission.
+<img src="Baseband Transmission.png" alt="Baseband Transmission" height="150";>
+<p>Baseband transmission requires that we have a low-pass channel, a channel with a
+    bandwidth that starts from zero. This is the case if we have a dedicated medium with a
+    bandwidth constituting only one channel. For example, the entire bandwidth of a cable
+    connecting two computers is one single channel.</p> 
+<article>
+    <h3>Broadband Transmission (Using Modulation)</h3>
+    Broadband transmission or modulation means changing the digital signal to an analog
+    signal for transmission. Modulation allows us to use a bandpass channel-a channel with a
+    bandwidth that does not start from zero. This type of channel is more available than a low-pass
+    channel. Below Figure shows a bandpass channel.
+    <img src="bandpass channel.png" alt="bandpass channel" height=150;>
+</article>  
+<article>
+    <h3>Bit Rate</h3>
+    Bit rate is used to describe digital signals. The bit rate is the number of bits sent in 1s, expressed
+in bits per second (bps).
+<h3>Bit length</h3>
+The bit length is the distance one bit occupies on the transmission medium.
+<pre>𝐵𝑖𝑡 𝑙𝑒𝑛𝑔𝑡h = 𝑝𝑟𝑜𝑝𝑎𝑔𝑎𝑡𝑖𝑜𝑛 𝑠𝑝𝑒𝑒𝑑 * 𝑏𝑖𝑡 𝑑𝑢𝑟𝑎𝑡𝑖𝑜𝑛</pre>
+</article>
+<h3>Data Rate Limits</h3>
+Data rate depends on three factors:
+<ol>
+    <li>The bandwidth available</li>
+    <li>The level of the signals we use</li>
+    <li>The quality of the channel (the level of noise)</li>
+</ol>
+Two theoretical formulas were developed to calculate the data rate:
+<ol type="i">
+    <li>Nyquist Bit Rate for a noiseless channel</li>
+    <li>Shannon Capacity for a noisy channel.</li>
+</ol>
+<article>
+    <h3>Noiseless Channel: Nyquist Bit Rate</h3>
+    For a noiseless channel, the Nyquist bit rate formula defines the theoretical maximum bit
+    rate:
+    <pre>𝐵𝑖𝑡𝑅𝑎𝑡𝑒 = 2 × 𝑏𝑎𝑛𝑑𝑤𝑖𝑑𝑡h × 𝑙𝑜𝑔2𝐿</pre>  
+    <p>In this formula, bandwidth is the bandwidth of the channel, L is the number of signal
+        levels used to represent data, and BitRate is the bit rate in bits per second.</p>
+</article>
+<article>
+    <h3>Noisy Channel: Shannon Capacity</h3>
+    In 1944, Claude Shannon introduced a formula, called the Shannon capacity, to
+determine the theoretical highest data rate for a noisy channel:
+<pre>𝑐𝑎𝑝𝑎𝑐𝑖𝑡𝑦 = 𝑏𝑎𝑛𝑑𝑤𝑖𝑑𝑡𝑕 × log2(1 + 𝑆𝑁𝑅)</pre>
+<p>In this formula, bandwidth is the bandwidth of the channel, SNR is the signal-to-noise ratio, and
+    capacity is the capacity of the channel in bits per second.</p>
+</article>
+</body>
+</html>

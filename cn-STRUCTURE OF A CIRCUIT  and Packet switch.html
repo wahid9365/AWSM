@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRUCTURE OF A CIRCUIT SWITCH and PACKET SWITCH</title>
+</head>
+<body>
+    <h3>STRUCTURE OF A CIRCUIT SWITCH</h3>
+    Circuit switching today can use either of two technologies:
+    <ol>
+        <li>The space-division switch or</li>
+        <li>The time-division switch.</li>
+</ol>
+<article>
+    <h4>Space-Division Switch</h4>
+    In space-division switching, the paths in the circuit are separated from one another
+    spatially. This technology was originally designed for use in analog networks but is used
+    currently in both analog and digital networks.    
+<ul>
+    <li>
+        <h4>Crossbar Switch</h4>
+        A crossbar switch connects n inputs to m outputs in a grid, using electronic micro-
+switches (transistors) at each crosspoint (see Figure below). The major limitation of this
+design is the number of crosspoints required. To connect n inputs to m outputs using a
+crossbar switch requires n x m crosspoints. For example, to connect 1000 inputs to 1000
+outputs requires a switch with 1,000,000 crosspoints. A crossbar with this number of
+crosspoints is impractical. Such a switch is also inefficient because statistics show that, in
+practice, fewer than 25 percent of the crosspoints are in use at any given time. The rest are
+idle.<br>
+<img src="Crossbar switch with three inputs and four outputs.png" alt="Crossbar switch with three inputs and four outputs" height="300";>
+    </li>
+    <li>
+        <h4>
+            Multistage Switch      
+        </h4>
+        <p>The solution to the limitations of the crossbar switch is the multistage switch, which
+combines crossbar switches in several (normally three) stages, as shown in Figure below.</p>
+ <img src="Multistage switch.png" alt="Multistage switch" height="300";>
+<p>In a single crossbar switch, only one row or column (one path) is active for any
+    connection. So we need N x N crosspoints. If we can allow multiple paths inside the switch,
+    we can decrease the number of crosspoints. Each crosspoint in the middle stage can be
+    accessed by multiple crosspoints in the first or third stage.</p>
+</li>
+</ul>
+</article>
+<article>
+    <h4>Time-Division Switch</h4>
+    Time-division switching uses time-division multiplexing (TDM) inside a switch. The
+most popular technology is called the time-slot interchange (TSI)
+<h4>Time-Slot Interchange</h4>
+Figure below shows a system connecting four input lines to four output lines. Imagine
+that each input line wants to send data to an output line according to the following pattern:
+(13), (24), (31) and (42) in which the arrow means “to”.
+<img src="Time-Slot Interchange.png" alt="Time slot Interchange" height="300";>
+<p>The figure combines a TDM multiplexer, a TDM demultiplexer, and a TSI consisting of
+    random access memory (RAM) with several memory locations. The size of each location is
+    the same as the size of a single time slot. The number of locations is the same as the number
+    of inputs (in most cases, the numbers of inputs and outputs are equal). The RAM fills up with
+    incoming data from time slots in the order received. Slots are then sent out in an order based
+    on the decisions of a control unit.</p>
+</article>
+<h3>STRUCTURE OF A PACKET SWITCH</h3>
+Packet switch has four components:
+<ol>
+    <li>Input ports</li>
+    <li>Output ports</li>
+    <li>Routing processor and</li>
+    <li>Switching fabric</li>
+</ol>
+<img src="Packet-Switch component.png" alt="Packet switch component" height="300";>
+<article>
+    <h3>Input Ports</h3>
+    An input port performs the physical and data link functions of the packet switch. The
+bits are constructed from the received signal. The packet is decapsulated from the frame.
+Errors are detected and corrected. The packet is now ready to be routed by the network layer.
+In addition to a physical layer processor and a data link processor, the input port has buffers
+(queues) to hold the packet before it is directed to the switching fabric.
+
+</article>
+<img src="Input Port.png" alt="input Port" height="200";>
+<article>
+    <h3>Output Port</h3>
+    The output port performs the same functions as the input port, but in the reverse order.
+First the outgoing packets are queued, then the packet is encapsulated in a frame, and finally
+the physical layer functions are applied to the frame to create the signal to be sent on the line.
+</article>
+<img src="output Port.png" alt="Output port" height="200";>
+<article>
+    <h3>Routing Processor</h3>
+    The routing processor performs the functions of the network layer. The destination
+address is used to find the address of the next hop and, at the same time, the output port
+number from which the packet is sent out. This activity is sometimes referred to as table
+lookup because the routing processor searches the routing table.
+</article>
+<article>
+    <h3>Switching Fabrics</h3>
+    The most difficult task in a packet switch is to move the packet from the input queue
+to the output queue. The speed with which this is done affects the size of the input/output
+queue and the overall delay in packet delivery.
+<p>The packet switches are specialized mechanisms that use a variety of switching
+fabrics such as crossbar switch, Banyan Switch and Batcher-Banyan Switch</p>
+</article>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switching</title>
+</head>
+<body>
+    <h3>Switching</h3>
+   <p>A switched network consists of a series of interlinked nodes, called switches. Switches are
+    devices capable of creating temporary connections between two or more devices linked to the
+    switch. In a switched network, some of these nodes are connected to the end systems
+    (computers or telephones, for example). Others are used only for routing. Below Figure
+    shows a switched network.</p>
+
+    <img src="Switched Network.png" alt="Switched Network" height="200";>  
+    <p>The end systems (communicating devices) are labeled A, B, C, D, and so on, and the
+switches are labeled I, II, III, IV, and V. Each switch is connected to multiple links.</p>
+<h4>Three Methods of Switching</h4>
+<ol type="i">
+    <li>Circuit-switched networks,</li>
+    <li>Packet-switched networks, and</li>
+    <li>Message-switched.</li>
+
+</ol>
+<p>Packet-switched networks can further be divided into two subcategories-virtual-circuit
+    networks and datagram networks as shown below</p>
+   <img src="Taxonomy of switched Network.png" alt="Taxonomy of switched Network" height="200";>
+<article>
+    <h3>CIRTCUIT-SWITCHED NETWORK</h3>
+    A circuit-switched network consists of a set of switches connected by physical links. A
+connection between two stations is a dedicated path made of one or more links. However,
+each connection uses only one dedicated channel on each link. Each link is normally divided
+into n channels by using FDM or TDM.
+<p>Below Figure shows a trivial circuit-switched network with four switches and four
+    links. Each link is divided into n (n is 3 in the figure) channels by using FDM or TDM.</p>
+<img src="Circuit-switched Network.png" alt="Circuit-switched Network" height="300";>
+<p>The end systems, such as computers or telephones, are directly connected to a switch.
+    When end system A needs to communicate with end system M, system A needs to request a
+    connection to M that must be accepted by all switches as well as by M itself. This is called
+    the setup phase; a circuit (channel) is reserved on each link, and the combination of circuits
+    or channels defines the dedicated path. After the dedicated path made of connected circuits
+    (channels) is established, data transfer can take place. After all data have been transferred, the
+    circuits are tom down.</p>
+    <h4>Three Phases of Circuit-Switched Network</h4>
+<p>The actual communication in a circuit-switched network requires three phases:</p>
+<ol>
+    <li>
+        <h3>Connection setup:</h3>
+        Before the two parties (or multiple parties in a conference call) can communicate, a
+dedicated circuit (combination of channels in links) needs to be established. The end systems
+are normally connected through dedicated lines to the switches, so connection setup means
+creating dedicated channels between the switches.
+<p>The end-to-end addressing is required for creating a connection between the two end
+    systems. These can be, for example, the addresses of the computers assigned by the
+    administrator in a TDM network, or telephone numbers in an FDM network.</p>
+    </li>
+    <li>
+        <h3>Data Transfer Phase:</h3>
+        After the establishment of the dedicated circuit (channels), the two parties can transfer data.
+    </li>
+    <li>
+        <h3>Teardown Phase</h3>
+        When one of the parties needs to disconnect, a signal is sent to each switch to release the
+resources.
+    </li>
+</ol>
+</article>
+<article>
+    <h3>PACKETS SWITCH NETWORK</h3>
+    In data communications, we need to send messages from one end system to another. If
+the message is going to pass through a packet-switched network, it needs to be divided into
+packets of fixed or variable size. The size of the packet is determined by the network and the
+governing protocol
+<p>In packet switching, there is no resource allocation for a packet. This means that there
+    is no reserved bandwidth on the links, and there is no scheduled processing time for each
+    packet. Resources are allocated on demand. The allocation is done on a first-come, first-
+    served basis. When a switch receives a packet, no matter what is the source or destination, the
+    packet must wait if there are other packets being processed.</p>
+
+</article>
+<article>
+    <h3>Datagram Network</h3>
+    In a datagram network, each packet is treated independently of all others. Even if a
+packet is part of a multi-packet transmission, the network treats it as though it existed alone.
+Packets in this approach are referred to as datagrams. Datagram switching is normally done at
+the network layer.
+<p>Below Figure shows how the datagram approach is used to deliver four packets from
+    station A to station X. The switches in a datagram network are traditionally referred to as
+    routers. In this example, all four packets (or datagrams) belong to the same message, but may
+    travel different paths to reach their destination. This is so because the links may be involved
+    in carrying packets from other sources and do not have the necessary bandwidth available to
+    carry all the packets from A to X.</p>
+    <img src="Datagram network with four switches.png" alt="Datagram network with four switches" height="300";>
+</article>
+<article>
+    <h3>Routing Table</h3>
+    In datagram network, each switch (or packet switch) has a routing table which is
+based on the destination address. The routing tables are dynamic and are updated
+periodically. The destination addresses and the corresponding forwarding output ports are
+recorded in the tables. Below Figure shows the routing table for a switch.
+</article>
+<img src="Routing table in datagram network.png" alt="Routing table in datagram network" height="300";>
+
+<h3>Destination address in Datagram network</h3>
+Every packet in a datagram network carries a header that contains, among other
+information, the destination address of the packet. When the switch receives the packet, this
+destination address is examined; the routing table is consulted to find the corresponding port
+through which the packet should be forwarded. This address remains the same during the
+entire journey of the packet.
+<h4>VIRTUAL-CIRCUIT NETWORK</h4>
+A virtual-circuit network is a cross between a circuit-switched network and a
+datagram network. It has some characteristics of both.
+<ol>
+    <li>As in a circuit-switched network, there are setup and teardown phases in addition
+        to the data transfer phase.</li>
+    <li>Resources can be allocated during the setup phase, as in a circuit-switched
+        network, or on demand, as in a datagram network</li>
+    <li>As in a datagram network, data are packetized and each packet carries an address
+        in the header.</li>
+    <li>As in a circuit-switched network, all packets follow the same path established
+        during the connection.</li>
+    <li>A virtual-circuit network is normally implemented in the data link layer, while a
+        circuit-switched network is implemented in the physical layer and a datagram
+        network in the network layer.</li>
+</ol>
+<p>Below Figure is an example of a virtual-circuit network. The network has switches that
+    allow traffic from sources to destinations. A source or destination can be a computer, packet
+    switch, bridge, or any other device that connects other networks</p>
+<img src="Virtual-circuit network.png" alt="Virtual-circuit network" height="300";>
+<article>
+    <h3>Addressing in Virtual-circuit network</h3>
+    In a virtual-circuit network, two types of addressing are involved: global and loca
+(virtual-circuit identifier).
+</article>
+<article>
+    <h3>Global Addressing</h3>
+    A source or a destination needs to have a global address-an address that can be unique
+in the scope of the network or internationally if the network is part of an international
+network.
+</article>
+<article>
+    <h3> Virtual-Circuit Identifier</h3>
+    The identifier that is actually used for data transfer is called the virtual-circuit
+identifier (VCI). A VCI, unlike a global address, is a small number that has only switch
+scope; it is used by a frame between two switches. When a frame arrives at a switch, it has a
+VCI; when it leaves, it has a different VCI. Below figure shows how the VCI in a data frame
+changes from one switch to another.
+</article>
+
+</body>
+</html>

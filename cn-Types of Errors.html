@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Errors</title>
+</head>
+<body>
+    <h4>Data can be corrupted during transmission. Some applications require that errors be detected
+        and corrected.</h4>
+        <h3>Types of Errors</h3>
+       <ul>
+<li>Single-Bit Error: The term single-bit error means that only 1 bit of a given data unit (such as
+        a byte, character, or packet) is changed from 1 to 0 or from 0 to 1.
+    <p>Below figure shows the effect of a single-bit error on a data unit. In Figure, 00000010
+        (ASCII STX) was sent, meaning start of text, but 00001010 (ASCII LF) was received,
+        meaning line feed</p>
+        <img src="Single bit error.png" alt="Single Bit Error" height="300";>
+    </li>
+<li>Burst Error: The term burst error means that 2 or more bits in the data unit have changed
+    from 1 to 0 or from 0 to 1.</li>
+<p>Below Figure shows the effect of a burst error on a data unit. In this case,
+    0100010001000011was sent, but 0101110101100011was received. The length of the burst is
+    measured from the first corrupted bit to the last corrupted bit. Some bits in between may not
+    have been corrupted.</p>
+    <img src="Burst error.png" alt="Burst error" height="300";>
+</ul>
+<article><h3>Redundancy</h3>
+The central concept in detecting or correcting errors is redundancy. To be able to detect
+or correct errors, we need to send some extra bits with our data. These redundant bits are added
+by the sender and removed by the receiver. Their presence allows the receiver to detect or correct
+corrupted bits.</article>
+<article>
+    <h3>Detection versus Correction</h3>
+
+    In error detection, we are looking only to see if any error has occurred. The answer is a
+    simple yes or no. We are not even interested in the number of errors. A single-bit error is the
+    same for us as a burst error
+<p>In error correction, we need to know the exact number of bits that are corrupted and more
+    importantly, their location in the message. The number of the errors and the size of the message
+    are important factors. If we need to correct one single error in an 8-bit data unit, we need to
+    consider eight possible error locations; if we need to correct two errors in a data unit of the same
+    size, we need to consider 28 possibilities.</p></article>
+<h3>Forward Error Correction versus Retransmission</h3>
+<p>There are two main methods of error correction. Forward error correction is the process
+    in which the receiver tries to guess the message by using redundant bits.</p>
+<p>Correction by retransmission is a technique in which the receiver detects the occurrence
+    of an error and asks the sender to resend the message. Resending is repeated until a message
+    arrives that the receiver believes is error-free.</p>
+<h3>ERROR DETECTION AND CORRECTION TECHNIQUES</h3>
+<h4>BLOCK CODING</h4>
+<p>In block coding, we divide our message into blocks, each of k bits, called datawords. We
+    add r redundant bits to each block to make the length n = k + r. The resulting n-bit blocks are
+    called codewords. With k bits, we can create a combination of 2k datawords; with n bits, we can
+    create a combination of 2n codewords.</p>
+    <h4>Error Detection using block coding</h4>
+    If the following two conditions are met, the receiver can detect a change in the original
+    codeword.
+    <ul>
+        <li>The receiver has (or can find) a list of valid codewords.</li>
+        <li>The original codeword has changed to an invalid one.</li>
+    
+    <p>Below Figure shows the role of block coding in error detection. The sender creates
+        codewords out of datawords by using a generator that applies the rules and procedures of
+        encoding. Each codeword sent to the receiver may change during transmission. If the received
+        codeword is the same as one of the valid codewords, the word is accepted; the corresponding
+        dataword is extracted for use. If the received codeword is not valid, it is discarded. However, if
+        the codeword is corrupted during transmission but the received word still matches a valid
+        codeword, the error remains undetected. This type of coding can detect only single errors. Two
+        or more errors may remain undetected.</p>
+  <p>An error-detecting code can detect only the types of errors for which it is designed; other
+    types of errors may remain undetected</p>
+<li>
+    <h3>Error Correction using block coding</h3>
+<p>Below Figure shows the role of block coding in error correction. We can see that the idea is
+    the same as error detection but the checker functions are much more complex.</p>
+    <img src="Structure of encoder and decoder in error correction.png" alt="Structure of encoder and decoder in error correction" height="300";>
+</li>
+</ul>
+    </body>
+</html>
