@@ -1,0 +1,139 @@
+<html>
+<head>
+    <title>E-Commerce</title>
+    <style>
+        /* Internal CSS */
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .topic-link {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+table, th, td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <!-- Topic links will be added dynamically -->
+    </div>
+    <div class="content" id="content">
+<h2>Introduction</h2>
+E-commerce, short for electronic commerce, refers to the process of buying and selling goods,
+services, and information over the internet. It encompasses a variety of business models and
+activities that involve the electronic exchange of value. E-commerce has revolutionized the way
+businesses operate and how consumers shop, providing convenience, broader market access,
+and streamlined processes.
+            </div>
+    
+    <script>
+        // Define your topics and content
+        var topics = [
+            {
+                title: '~Introduction',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-introduction.html"></iframe></html>'
+            },
+            {
+                title: '~Types of E-Commerce',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-types.html"></iframe></html>'
+            },
+            {
+                title: '~E-Commerce Security',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-security.html"></iframe></html>'
+            },
+            {
+                title: '~E-Commerce Threats',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-threats.html"></iframe></html>'
+            },
+            {
+                title: '~WWW Based Security Schemes',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-www based security.html"></iframe></html>'
+            },
+            {
+                title: '~Security Breaches',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-security breaches.html"></iframe></html>'
+            },
+            {
+                title: '~Encryption',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-encryption.html"></iframe></html>'
+            },
+            {
+                title: '~IT Act, 2000',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-it act 2000.html"></iframe></html>'
+            },
+            {
+                title: '~Online Business Transactions',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-online business transactions.html"></iframe></html>'
+            },
+            {
+                title: '~E-Tailing',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-etailing.html"></iframe></html>'
+            },
+            {
+                title: '~E-Commerce Financial Services',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-financial services.html"></iframe></html>'
+            },
+            {
+                title: '~Career of E-Commerce',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-career of ecommerce.html"></iframe></html>'
+            },
+            {
+                title: '~Online Learning',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-online learning.html"></iframe></html>'
+            },
+            {
+                title: '~Online Entertainment',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-online entertainment.html"></iframe></html>'
+            },
+                title: '~Online Shopping',
+                content: '<html><iframe style="height:100%; width:100%; border:none;" src="ecom-online shopping.html"></iframe></html>'
+            },
+        ];
+        
+        // Function to create topic links
+        function createTopicLinks() {
+            var sidebarDiv = document.getElementById("sidebar");
+            
+            topics.forEach(function(topic) {
+                var topicLink = document.createElement("a");
+                topicLink.classList.add("topic-link");
+                topicLink.textContent = topic.title;
+                topicLink.onclick = function() {
+                    showContent(topic.content);
+                };
+                sidebarDiv.appendChild(topicLink);
+            });
+        }
+        
+        // Function to show content
+        function showContent(content) {
+            var contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = content;
+        }
+        
+        // Call the createTopicLinks function to generate the links
+        createTopicLinks();
+    </script>
+</body>
+</html>
